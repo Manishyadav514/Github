@@ -1,0 +1,109 @@
+.challange33Title {
+  text-align: center;
+  margin: 4rem 0 6rem 0;
+}
+.challange33Underline {
+  width: 8rem;
+  height: 0.25rem;
+  background: hsl(205, 78%, 60%);
+  margin: 0 auto;
+}
+.challange33Container {
+  width: 90vw;
+  max-width: 500px;
+  margin: 5rem auto;
+}
+.challange33List {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+@media screen and (min-width: 576px) {
+  .challange33List {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+.challange33Card {
+  background: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem 3.5rem;
+  text-align: center;
+}
+.challange33Card img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+}
+.challange33Card h4 {
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: hsl(210, 22%, 49%);
+}
+.challange33ProfileButton {
+  padding: 0.35rem 0.75rem;
+  letter-spacing: 1.6px;
+  font-size: 0.75rem;
+  color: #fff;
+  background: #222;
+  border-radius: 0.25rem;
+  border-color: transparent;
+  text-transform: uppercase;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  text-decoration: none;
+}
+.challange33Index {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+  .challange32ButtonsContainer{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+  }
+  .challange32Buttons {
+    margin-bottom: 4rem;
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: row;
+    width: 356px;
+    overflow: scroll;
+  }
+  .challange32Buttons::-webkit-scrollbar { 
+  display: none; 
+  }
+
+.challange33IndexButton {
+  width: 2rem;
+  height: 2rem;
+  background: hsl(205, 89%, 70%);
+  border-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0.5rem;
+  transition: all 0.3s linear;
+}
+.challange33IndexActive {
+  background:hsl(205, 86%,17%);
+  color: #fff;
+}
+.challange33IndexPrevious,
+.challange33IndexNext {
+  background: transparent;
+  border-color: transparent;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+@media screen and (min-width: 775px) {
+  .challange33Index {
+    margin: 0 auto;
+    max-width: 700px;
+  }
+}

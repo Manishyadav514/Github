@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+.challange30 {
+    background-color: #1A1818;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+}
+
+.challange30Search {
+    background-color: #3E3B39;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+.challange30SearchInput {
+    background-color: transparent;
+    border: 2px solid #9B9A9C;
+    border-radius: 50px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+.challange30SearchInput::placeholder {
+    color: #F8F8FF;
+}
+.challange30SearchInput:focus {
+    background-color: #22254b;
+    outline: none;
+}
+
+.challange30List {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.challange30Movie {
+    background-color: #3E3B39;
+    border-radius: 3px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    margin: 1rem;
+    width: 300px;
+}
+.challange30Movie:hover .challange30Description {
+    transform: translateY(0);
+}
+.challange30Movie img {
+    width: 100%;
+}
+.challange30Movie-info {
+    color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+
+.challange30Movie-info h3 {
+    margin: 0;
+}
+
+.challange30Movie-info span {
+    background-color: #F8F8FF;
+    border-radius: 3px;
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+}
+.challange30Movie-info span.green {
+    color: rgb(39, 189, 39);
+}
+
+.challange30Movie-info span.orange {
+    color: orange;
+}
+
+.challange30Movie-info span.red {
+    color: rgb(189, 42, 42);
+}
+
+.challange30Description {
+    background-color: #F8F8FF;
+    padding: 2rem;
+    position: absolute;
+    max-height: 100%;
+    overflow: auto;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+}
+
+.challange30Description h3 {
+    margin-top: 0;
+}
+
+

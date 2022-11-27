@@ -1,0 +1,90 @@
+.challange31 {
+  background-color: #1A1818;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  /* display: flex;
+  width: 100px; */
+  /* justify-content: center; */
+}
+.challange31Search {
+  background-color: #3e3b39;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+.challange31SearchInput {
+  background-color: transparent;
+  border: 2px solid #9b9a9c;
+  border-radius: 50px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+.challange31SearchInput::placeholder {
+  color: #f8f8ff;
+}
+.challange31SearchInput:focus {
+  background-color: #22254b;
+  outline: none;
+}
+.challange31Card {
+  background-color: #3E3B39;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  max-width: 800px;
+}
+
+.challange31Image{
+  border: 10px solid #1A1818;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+}
+
+.challange31Texts {
+  color: #eee;
+  margin-left: 2rem;
+}
+
+.challange31Texts h2 {
+  margin-top: 0;
+}
+
+.challange31Texts ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+  max-width: 400px;
+}
+
+.challange31Texts ul li {
+  display: flex;
+  align-items: center;
+}
+
+.challange31Texts ul li strong {
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+}
+
+.repo {
+  background-color: #2a2a72;
+  border-radius: 5px;
+  display: inline-block;
+  color: white;
+  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+}
+@media screen and (max-width:600px){
+    .challange31Card{
+        flex-direction: column;
+        align-items: center;
+    }
+}
