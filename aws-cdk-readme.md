@@ -1,4 +1,4 @@
-* The following is an abridged example of a very basic stack that constructs an API Gateway `RestApi` to serve a lambda function:
+- The following is an abridged example of a very basic stack that constructs an API Gateway `RestApi` to serve a lambda function:
 
 ```
 export class TestStack extends cdk.Stack {
@@ -10,8 +10,8 @@ export class TestStack extends cdk.Stack {
 
     // First, create a test lambda
     const testLambda = new apilambda.Function(this, 'test_lambda', {
-      runtime: apilambda.Runtime.NODEJS_10_X,  
-      code: apilambda.Code.fromAsset('lambda'),  
+      runtime: apilambda.Runtime.NODEJS_10_X,
+      code: apilambda.Code.fromAsset('lambda'),
       handler: 'test.handler',
       environment: { STAGE }
     })
@@ -26,7 +26,7 @@ export class TestStack extends cdk.Stack {
     const deployment  = new apigw.Deployment(this, 'test_deployment', { api });
 
     // And, a Stage construct
-    const stage = new apigw.Stage(this, 'test_stage', { 
+    const stage = new apigw.Stage(this, 'test_stage', {
       deployment,
       stageName: STAGE
     });
@@ -37,13 +37,10 @@ export class TestStack extends cdk.Stack {
 }
 ```
 
-
-
-
-
-
 #### Stages in rest api.
+
 Note that I have renamed resources from test_lambda to my_lambda to avoid confusion with stage names. Also note that I have removed the environment variable to lambda for brevity.
+
 ```
 import * as cdk from '@aws-cdk/core';
 import * as apigw from '@aws-cdk/aws-apigateway';
@@ -56,8 +53,8 @@ export class ApigwDemoStack extends cdk.Stack {
 
     // First, create a test lambda
     const myLambda = new lambda.Function(this, 'my_lambda', {
-      runtime: lambda.Runtime.NODEJS_10_X,    
-      code: lambda.Code.fromAsset('lambda'),  
+      runtime: lambda.Runtime.NODEJS_10_X,
+      code: lambda.Code.fromAsset('lambda'),
       handler: 'test.handler'
     });
 
@@ -73,13 +70,14 @@ export class ApigwDemoStack extends cdk.Stack {
     const deployment  = new apigw.Deployment(this, 'my_deployment', { api });
 
     // And different stages
-    const [devStage, testStage, prodStage] = ['dev', 'test', 'prod'].map(item => 
+    const [devStage, testStage, prodStage] = ['dev', 'test', 'prod'].map(item =>
       new apigw.Stage(this, `${item}_stage`, { deployment, stageName: item }));
 
     api.deploymentStage = prodStage
   }
 }
 ```
+
 Important part to note here is:
 
 myLambda.grantInvoke(new ServicePrincipal('apigateway.amazonaws.com'));
@@ -93,17 +91,19 @@ I have tested this out myself. This should resolve your problem. I would suggest
 My super simple Lambda code:
 
 // lambda/test.ts
+
 ```
 export const handler = async (event: any = {}) : Promise <any> => {
   console.log("Inside Lambda");
-  return { 
-    statusCode: 200, 
+  return {
+    statusCode: 200,
     body: 'Successfully Invoked Lambda through API Gateway'
   };
 }
 ```
 
-#### Updating the API Gateway Stage Name in AWS CDK #
+#### Updating the API Gateway Stage Name in AWS CDK
+
 ```
 import * as apigateway from 'aws-cdk-lib/aws-apigateway';
 import * as cdk from 'aws-cdk-lib/core';
@@ -122,7 +122,9 @@ export class CdkStarterStack extends cdk.Stack {
 }
 
 ```
-The name of the stage is then included in the API url, for example: 
+
+The name of the stage is then included in the API url, for example:
+
 ```
 https://api-id.execute-api.region.amazonaws.com/STAGE-NAME/.
 ```
