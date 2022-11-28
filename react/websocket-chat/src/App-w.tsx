@@ -14,10 +14,11 @@ const App = () => {
   ]);
 
   const onSocketOpen = useCallback(() => {
-    alert("Connecting...");
-    socket.current?.send(JSON.stringify({ action: "connection" }));
+    const name = prompt("Enter your name");
+    socket.current?.send(JSON.stringify({ action: "setName", name }));
     setIsConnected(true);
   }, []);
+
 
   const onSocketClose = useCallback(() => {
     setMembers([]);
@@ -27,7 +28,6 @@ const App = () => {
 
   const onSocketMessage = useCallback((dataStr) => {
     const data = JSON.parse(dataStr);
-    console.log(data);
     if (data.members) {
       setMembers(data.members);
     } else if (data.publicMessage) {
