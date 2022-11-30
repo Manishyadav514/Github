@@ -128,3 +128,8 @@ The name of the stage is then included in the API url, for example:
 ```
 https://api-id.execute-api.region.amazonaws.com/STAGE-NAME/.
 ```
+
+
+
+
+
