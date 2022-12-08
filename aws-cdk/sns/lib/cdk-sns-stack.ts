@@ -11,6 +11,7 @@ export class CdkSnsStack extends cdk.Stack {
         const topic = new sns.Topic(this, 'notification', {
             topicName: 'notification-topic',
             displayName: 'notification-topic'
+        
         })
 
         // Create an lambda function

@@ -1,5 +1,5 @@
-exports.handler = async function (event) {
-  console.log("request:", JSON.stringify(event, undefined, 2));
+exports.handler = async function (event:any) {
+  console.log(event);
   var name = event.pathParameters.name
     ? event.pathParameters.name
     : event.pathParameters.proxy;

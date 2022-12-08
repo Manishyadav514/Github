@@ -13,25 +13,10 @@ export class AwsCdkProjectStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
-
-    // example resource
-    // const queue = new sqs.Queue(this, 'AwsCdkProjectQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
-
-    // define S3 bucket in stack using bucket construct
-    // new s3.Bucket(this, "AWSCDKProjectBucket", {
-    //   versioned: true,
-    //   removalPolicy: cdk.RemovalPolicy.DESTROY,
-    //   autoDeleteObjects: true,
-    // });
-
-    // defines an AWS Lambda resource
     const hello = new lambda.Function(this, "HelloHandler", {
-      runtime: lambda.Runtime.NODEJS_14_X, // execution environment
-      code: lambda.Code.fromAsset("lambda"), // code loaded from "lambda" directory
-      handler: "hello.handler", // file is "hello", function is "handler"
+      runtime: lambda.Runtime.NODEJS_14_X, 
+      code: lambda.Code.fromAsset("lambda"),
+      handler: "hello.handler",
     });
 
     // defines an API Gateway REST API resource backed by our "hello" function.
