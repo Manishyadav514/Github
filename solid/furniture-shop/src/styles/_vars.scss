@@ -1,0 +1,59 @@
+$theme-main: hsl(43, 100%, 49%);
+$theme-accent: hsl(0, 0%, 100%);
+$theme-bg-color: hsl(0, 0%, 97%);
+$theme-bg-color-off: hsl(0, 0%, 94%);
+$theme-dark-bg: hsla(0, 0%, 0%, 0.4);
+$theme-dark-bg-off: hsla(0, 0%, 0%, 0.2);
+$theme-lght-bg: hsla(0, 0%, 100%, 0.86);
+$theme-social-icons: hsl(256, 36%, 41%);
+
+$font-color-main: hsl(0, 0%, 20%);
+$font-color-main-off: hsl(0, 0%, 40%);
+$font-color-secondary: hsl(0, 0%, 100%);
+
+$font-w-bold-less: 500;
+
+$font-stack-title: Calisto, Cochin, Georgia, Times, "Times New Roman", serif;
+
+$spacing-xsmall: 1rem;
+$spacing-small: 2rem;
+$spacing-medium: 3.2rem;
+$spacing-large: 5.6rem;
+$spacing-xlarge: 8.6rem;
+
+$sizing-xsmall: 2.6rem;
+$sizing-small: 6rem;
+$sizing-medium: 9rem;
+$sizing-large: 14rem;
+
+$breakpoint-lg: 1200px;
+$breakpoint-md: 900px;
+$breakpoint-sm: 600px;
+$breakpoint-xs: 460px;
+
+$transition-short: 360ms;
+
+$nav-height: 84px;
+
+/* we need these variables to change inside media queries, using css var */
+:root {
+  --font-size-normal: 16px;
+  --font-size-banner: 4.2rem;
+  --font-size-h1: 3.3rem;
+  --font-size-h2: 2.4rem;
+  --font-size-h3: 1.46rem;
+  --font-size-h4: 0.96rem;
+  --font-size-special: 1.1rem;
+  --font-size-subtitle: 1.26rem;
+}
+
+@media (max-width: $breakpoint-sm) {
+  :root {
+    --font-size-banner: 2.2rem;
+    --font-size-h1: 2rem;
+    --font-size-h2: 1.5rem;
+    --font-size-h3: 1.26rem;
+    --font-size-special: 1rem;
+    --font-size-subtitle: 1.1rem;
+  }
+}

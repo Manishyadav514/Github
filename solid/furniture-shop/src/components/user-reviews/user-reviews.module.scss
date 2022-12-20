@@ -1,0 +1,54 @@
+@use "../../styles/vars.scss";
+
+.container {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.inner_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: vars.$spacing-small;
+  row-gap: calc(vars.$spacing-medium) + 1rem;
+  width: 100%;
+  margin-top: vars.$spacing-large;
+}
+
+.inner_container > article {
+  display: flex;
+  gap: vars.$spacing-xsmall;
+  min-height: 120px;
+  max-width: 382px;
+  text-align: left;
+}
+.inner_container > article > img {
+  max-width: 70px;
+  max-height: 70px;
+  border-radius: 25%;
+}
+
+.quote_container {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$spacing-xsmall;
+}
+.quote_container > q {
+  font-size: var(--font-size-special);
+  font-style: italic;
+  color: vars.$font-color-main-off;
+}
+
+@media (max-width: vars.$breakpoint-xs) {
+  .inner_container > article {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .quote_container {
+    align-items: center;
+    text-align: center;
+  }
+}

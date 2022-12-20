@@ -1,0 +1,104 @@
+@use "../../../styles/vars.scss";
+
+.container {
+  flex-direction: column;
+  align-items: center;
+  min-height: 766px;
+  text-align: center;
+}
+.container > p {
+  font-size: var(--font-size-special);
+  font-weight: bold;
+  color: vars.$theme-main;
+}
+.container > h2 {
+  font-size: var(--font-size-h2);
+  padding: vars.$spacing-small;
+}
+
+.inner_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  column-gap: vars.$spacing-xsmall * 0.6;
+  row-gap: vars.$spacing-small;
+  padding-top: vars.$spacing-xsmall;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  max-width: 384px;
+}
+.item > img {
+  display: block;
+  aspect-ratio: 6/5;
+  margin-bottom: vars.$spacing-xsmall;
+  -webkit-box-shadow: 0px;
+  box-shadow: 0px;
+  transition: transform, -webkit-box-shadow, box-shadow,
+    calc(vars.$transition-short - 100ms) ease-in-out;
+}
+.item > img:hover {
+  -webkit-box-shadow: 0 0 6px vars.$theme-dark-bg;
+  box-shadow: 0 0 6px vars.$theme-dark-bg;
+  transform: scale(1.02);
+  transition: transform, -webkit-box-shadow, box-shadow,
+    calc(vars.$transition-short - 100ms) ease-in-out;
+}
+.item > span {
+  font-size: var(--font-size-h3);
+  font-weight: vars.$font-w-bold-less;
+  color: vars.$theme-main;
+}
+
+.cta_button {
+  border-radius: 5px;
+  margin-top: vars.$spacing-xsmall;
+  border: thin solid vars.$theme-accent;
+  height: vars.$sizing-xsmall;
+  width: vars.$sizing-medium;
+  background-color: vars.$theme-main;
+}
+.cta_button a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.loading {
+  animation: fadeIn 1s infinite alternate;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: vars.$breakpoint-md) {
+  .item {
+    flex-basis: 48%;
+  }
+}
+@media (max-width: vars.$breakpoint-xs) {
+  .item {
+    flex-basis: 100%;
+  }
+
+  .item > img {
+    display: block;
+    aspect-ratio: 1/1;
+  }
+}

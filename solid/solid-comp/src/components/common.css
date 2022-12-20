@@ -1,0 +1,39 @@
+.app-container {
+  width: 200px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.popup {
+  position: relative;
+  z-index: 2;
+  background: cyan;
+  padding: 1rem;
+  min-height: 200px;
+  min-width: 200px;
+}
+
+.popup::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #ddd transparent;
+}
+
+/* Life Cycle */
+.photos {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 8px;
+}
+
+figure,
+img {
+  width: 100%;
+  margin: 0;
+}

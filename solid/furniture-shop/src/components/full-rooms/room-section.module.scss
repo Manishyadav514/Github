@@ -1,0 +1,98 @@
+@use "../../styles/vars.scss";
+
+.container {
+  position: relative;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  gap: vars.$spacing-medium;
+  padding: vars.$spacing-medium;
+  background-color: vars.$theme-accent;
+}
+.container .cta_container:last-of-type {
+  flex-basis: 76%;
+}
+
+.cta_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  width: 100%;
+  min-height: 400px;
+  overflow: hidden;
+  text-align: left;
+  background: var(--bgImg);
+  color: vars.$font-color-secondary;
+  background-color: vars.$theme-dark-bg-off;
+  padding: vars.$spacing-medium vars.$spacing-small;
+  font-size: var(--font-size-special);
+  transition: background-color vars.$transition-short ease-in-out;
+}
+.cta_container:hover img {
+  filter: grayscale(0%);
+  transition: filter vars.$transition-short ease-in-out;
+}
+.cta_container:hover {
+  background-color: hsla(0, 0%, 0%, 0.1%);
+  transition: background-color vars.$transition-short ease-in-out;
+}
+.cta_container > h2 {
+  margin-bottom: vars.$spacing-xsmall;
+}
+
+.cta_button {
+  height: vars.$sizing-xsmall;
+  width: vars.$sizing-medium;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.bg > img {
+  position: relative;
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  filter: grayscale(66%);
+  transition: filter vars.$transition-short ease-in-out;
+}
+
+.loading {
+  animation: fadeIn 1s infinite alternate;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: vars.$breakpoint-lg) {
+  .container {
+    flex-direction: column;
+  }
+
+  .bg > img {
+    top: -20%;
+  }
+}
+@media (max-width: vars.$breakpoint-md) {
+  .bg > img {
+    top: 0%;
+  }
+}
+@media (max-width: vars.$breakpoint-xs) {
+  .container {
+    padding: vars.$spacing-large vars.$spacing-xsmall;
+  }
+
+  .cta_container {
+    padding: vars.$spacing-medium vars.$spacing-xsmall;
+  }
+}
