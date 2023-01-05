@@ -2,7 +2,7 @@ import { Context } from 'aws-lambda';
 import { S3Example } from 'layer-example'
 
 
-const region = process.env.REGION ?? 'us-east-1'
+const region = process.env.REGION ?? 'ap-south-1'
 
 export async function handler(event: any, context: Context) {
     console.log(event)

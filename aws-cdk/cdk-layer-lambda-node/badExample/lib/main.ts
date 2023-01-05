@@ -4,8 +4,8 @@ import * as cdk from 'aws-cdk-lib'
 import { CdkLayerLambdaStack } from './stacks/badCdkLayerLambdaStack'
 
 const devEnv = {
-    account: '698852667105',
-    region: 'us-east-1',
+    account: '217129141064',
+    region: 'ap-south-1',
   }
 
 const app = new cdk.App();
