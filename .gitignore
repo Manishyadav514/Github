@@ -68,3 +68,7 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# vscode
+.vscode
+next/vercel-commerce/.github
