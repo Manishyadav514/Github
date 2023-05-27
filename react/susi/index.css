@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    background-color: #AE2C08;
+    color: #fff;
+    height: 70px;
+    padding: 0 20px;
+  }
+  
+  .logo {
+    float: left;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
+  
+  .buttons a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+  }
+  
+  .buttons a:hover {
+    background-color: #ffffff;
+    border-radius: 45px;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .logo a {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .buttons a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #13151f;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .buttons a:before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -1px;
+    right: -1px;
+    bottom: -2px;
+    border-radius: 40px;
+    
+  }
+  
+  .buttons a:hover:before {
+    border-color: #ffffff;
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .buttons a:hover {
+    transform: scale(1.2);
+  }
+  .cart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    border-radius: 10px;
+    width: 70px;
+  
+  }
+  
+  
+  .fa-solid{
+    color: #13151f;
+    font-size: 24px;
+  
+  }
+  
+  .cart p{
+    height: 26px;
+    width: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 26px;
+    background-color: #13151f;
+    color: white;
+    
+  }
+  
+/* This is the code for food items and their styling till #item price-Do not disturb it */
+#biryani,#paneer,#chicken,#vegetable,#chinese,#south-indian{
+    margin-top: 40px;   
+}
+#paneer #item-card,#vegetable #item-card{
+    background: rgb(218, 253, 188);
+}
+#chinese #item-card,#south-indian #item-card{
+    background: rgb(221, 243, 243);
+}
+#category-name,.item-menu{
+    margin: 10px;
+    font-size: 35px;   
+    color: coral;
+    font-family: 'Aclonica', sans-serif;
+}
+#item-card{
+    width: 180px;
+    height: 220px;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    background: rgb(253, 221, 226);
+    cursor: pointer;
+    transition: 0.5s all step-end;
+}
+#item-card:hover img{
+    transform: scale(1.2);
+}
+#card-top{
+    display: flex;
+    margin: 5px 0;
+    justify-content: space-between;
+}
+#rating{
+    padding: 7px;
+    color: goldenrod;
+    background: black;
+    font-size: 14px;
+    border-radius: 15px;
+}
+.fa-shopping-cart{
+    padding: 6px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+#item-card img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: auto;
+    display: block;
+    margin-bottom: 15px;
+    transition: 0.5s all ease-in-out;
+}
+#item-name{
+    margin: 5px 0;
+    font-weight: 600;
+    color: darkslategray;
+    font-size: 18px;
+}
+#item-price{
+    margin: 0;
+    color: rgb(2, 27, 27);
+    font-weight: 500;
+    font-size: 18px;
+}
+
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cart Page</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="top-bar">
+		<div class="logo">
+			<a href="#">LOGO</a>
+		</div>
+		<div class="buttons">
+			<a href="index.html">Home</a>
+			<a href="#">Cart</a>
+			<a href="#">Search</a>
+			<a href="#">Account</a>
+		</div>
+	</div>
+	<div class="cart-container">
+		<h2>Select Delivery Option</h2>
+		<div class="delivery-options">
+			<div class="option">
+				<input type="radio" id="home-delivery" name="delivery-option" value="home-delivery">
+				<label for="home-delivery">Home delivery</label>
+				<div class="address">
+					<p>Your Address:</p>
+					<textarea rows="3" placeholder="Enter your address"></textarea>
+				</div>
+			</div>
+			<div class="option">
+				<input type="radio" id="pickup" name="delivery-option" value="pickup">
+				<label for="pickup">Pick up from outlet</label>
+			</div>
+		</div>
+		<hr>
+		<h2>Items in Cart</h2>
+		<table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Photo</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Order ID</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+            </tbody>
+            <tfoot>
+                <tr>
+                <td colspan="3">Total:</td>
+                <td id="total-price">0</td>
+                <td></td>
+                </tr>
+            </tfoot>
+        </table>
+		<hr>
+		<div class="order-summary">
+			<h2>Order Summary</h2>
+			<button class="checkout-btn"><i class="fa fa-shopping-cart" style="font-size:20px"></i><span style="padding-left: 10px;">Proceed to Checkout</span></button>
+		</div>
+	</div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
