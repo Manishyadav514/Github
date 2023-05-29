@@ -1,0 +1,43 @@
+.navbar {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    .navbar-left{
+        float: left;
+        & li{
+        display: inline;
+        margin: 1%;
+        font-size: 1.1rem;
+        
+        &.logo {
+                font-size: 1.6rem;
+                font-weight: bold;
+                margin-right: 3%;     
+                font-family: 'Montserrat', sans-serif;
+            }   
+        }
+    }
+    .navbar-right{
+        float: right;
+        & li{
+            display: inline-block;
+            margin: 1%;
+            font-size: 1rem;
+            border: 1px solid white;
+            border-radius: 6%;
+            padding: 2%;
+            width: 80px;
+            text-align: center;
+            
+        }
+    }
+   a {
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        &:hover{
+            color: #555;   
+            
+        }
+     }
+
+}

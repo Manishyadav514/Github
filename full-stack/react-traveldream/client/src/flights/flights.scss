@@ -1,0 +1,20 @@
+.flights {
+    padding: 5%;
+    & .price_tag {
+        border: 1px solid #ff4b64;
+        color: #ff4b64;
+        padding-left: 9%;
+        padding-right: 9%;
+        border-radius: 6%;
+        font-weight: bold;
+    }
+
+    & .mainInfo {
+        font-weight: bold;
+        color: #615f5f;
+    }
+ 
+    th {
+        background: white !important;
+    }
+}
