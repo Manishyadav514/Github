@@ -53,6 +53,10 @@ const RestaurantScreen = () => {
       headerShown: false,
     });
   }, []);
+
+      dishes,
+      console.log({dishes})
+
   return (
     <>
     <BasketIcon />
