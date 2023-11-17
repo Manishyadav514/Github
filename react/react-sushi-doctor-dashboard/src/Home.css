@@ -1,0 +1,30 @@
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.square-button {
+  width: 200px;
+  height: 200px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.square-button:hover {
+  background-color: #c0c0c0;
+}

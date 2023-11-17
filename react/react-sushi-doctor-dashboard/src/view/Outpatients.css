@@ -1,0 +1,46 @@
+/* Inpatients.css */
+
+.container {
+  max-width: 90%;
+  display: flex;
+  justify-content: center;
+   /* This ensures the container takes up the full viewport height */
+  text-align: center;
+  overflow: auto;
+
+  margin-top: 100px;
+}
+
+.table-container {
+  max-height: 400px; /* Adjust this value as needed */
+  overflow-y: auto;
+}  
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  max-width: 800px;
+  border: 1px solid #ccc;
+
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #e0e0e0;
+}
+
+
+
