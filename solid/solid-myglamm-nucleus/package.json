@@ -1,0 +1,37 @@
+{
+  "name": "nucleus-solid",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "start": "vite -m dev",
+    "dev": "vite -m dev",
+    "prod": "vite -m production",
+    "serve:dev": "vite build -m dev && vite preview -m dev",
+    "serve:prod": "vite build -m production && vite preview -m production"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@iconify-icon/solid": "^1.0.2",
+    "@types/node": "^18.14.4",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.19",
+    "sass": "^1.56.1",
+    "tailwindcss": "^3.2.4",
+    "vite": "^3.2.5",
+    "vite-plugin-solid": "^2.4.0"
+  },
+  "dependencies": {
+    "@solidjs/router": "^0.5.1",
+    "axios": "^1.2.1",
+    "clsx": "^1.2.1",
+    "fuse.js": "^6.6.2",
+    "i": "^0.3.7",
+    "lodash.debounce": "^4.0.8",
+    "native-json-editor": "^0.2.4",
+    "npm": "^9.2.0",
+    "solar-forms": "^0.0.5",
+    "solid-js": "^1.6.3",
+    "solid-toast": "^0.3.5",
+    "tinymce": "^6.3.1"
+  }
+}

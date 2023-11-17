@@ -1,0 +1,26 @@
+export const themeConfig = {
+    mgp:{
+        primaryColor:"#eb3b8c",
+        primaryLight:"#fdebf3"
+    },
+    bbc:{
+        primaryColor:"#03a0cb",
+        primaryLight:"#d9f2f7"
+    },
+    stb:{
+        primaryColor:"#d53a7b",
+        primaryLight:"#fff0f3"
+    },
+    tmc:{
+        primaryColor:"#3877bb",
+        primaryLight:"#c2d7f7"
+    },
+    orh:{
+        primaryColor:"#065029",
+        primaryLight:"#97b147"
+    },
+    srn:{
+        primaryColor:"#ee407d",
+        primaryLight:"#fdebf3"
+    }
+}

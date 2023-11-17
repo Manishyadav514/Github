@@ -1,0 +1,42 @@
+export enum OrderStatusEnum {
+  CANCELLED = 13, //* CANCELLED_ORDER
+  EXPIRED = 16, //* EXPIRED_ORDER
+  RETURN_INITIATED = 17,
+  RETURN_TO_ORIGIN = 19,
+  REJECT = 71,
+  HOLD = 78,
+  FAILED = 81,
+  FUTURE_ORDER = 10,
+  CONFIRMED = 12, //* CONFIRMED_ORDER
+  PARTIAL = 73,
+  SHIPPED = 14, //* IN_TRANSIT_ORDER
+  READY_TO_SHIP = 74,
+  OUT_FOR_DELIVERY = 75,
+  PACKING = 76,
+  PICKING = 77,
+  WMS_CLOSED = 79,
+  INVOICING = 80,
+  DELIVERED = 15, //* COMPLETED_ORDER
+  PENDING = 11, //* PENDING_ORDER
+  RETURN_COMPLETED = 18,
+  PENDING_APPROVAL = 20,
+  PRE_ORDERED = 72,
+  PAYMENT_PENDING = 21,
+  PAYMENT_PAID = 23,
+  PAYMENT_FAILED = 27,
+  PAYMENT_REFUNDED = 26,
+  PARTIALLY_REFUNDED = 29,
+  REPLACED = 82, // order replaced
+  PROCESSING = 83, // PROCESSING
+  ALLOCATED = 84,
+  PAYMENT_EXPIRED = 30
+}
+
+export enum OrderDeviceTypeEnum {
+  ANDROID = "android_ecom",
+  IOS = "ios_ecom",
+  DESKTOP = "Desktop_Website",
+  MOBILE = "Mobile_Website",
+  ADMIN = "admin-panel",
+  POS = "pos"
+}
