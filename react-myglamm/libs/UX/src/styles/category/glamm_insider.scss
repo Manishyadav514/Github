@@ -1,0 +1,582 @@
+.wrapper {
+  figure {
+    margin: 0;
+  }
+  img {
+    vertical-align: middle;
+    border-style: none;
+    max-width: 100%;
+  }
+  a {
+    background-color: transparent;
+    text-decoration: none;
+    color: #000;
+    margin-top: 0.3rem;
+  }
+  .text-center {
+    text-align: center !important;
+  }
+  .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    border-collapse: collapse;
+    thead th {
+      vertical-align: bottom;
+      border-bottom: 2px solid #dee2e6;
+    }
+    td,
+    th {
+      padding: 0.75rem;
+      vertical-align: top;
+      border-top: 1px solid #dee2e6;
+    }
+  }
+  .hide {
+    display: none !important;
+  }
+  .no-bullet {
+    list-style: none !important;
+  }
+  .join-now {
+    width: 18rem;
+    background: #000 !important;
+    color: #fff !important;
+    font-size: 1.13rem !important;
+  }
+  .btn-m {
+    margin: 1.88rem 0 0.62rem;
+    padding: 0;
+    width: 100%;
+  }
+  .cust-accordrion-panel-wrapper {
+    padding: 15px 0;
+    width: 100%;
+    border-bottom: 1px solid #000;
+    .custom-accordion {
+      cursor: pointer;
+      padding: 15px 25px 15px 0px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: 0;
+      font-size: 18px;
+      font-weight: 600;
+      transition: 0.4s;
+      background: 0 0;
+      position: relative;
+      &::after {
+        content: "+";
+        color: #000;
+        font-weight: 600;
+        position: absolute;
+        right: 0;
+        font-size: 28px;
+        top: 6px;
+        margin: auto;
+      }
+    }
+  }
+  .cust-accordrion-panel {
+    background-color: #fff;
+    // max-height: 0;
+    width: 100%;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    p {
+      padding: 0 8px;
+    }
+  }
+  .text-uppercase {
+    text-transform: uppercase !important;
+  }
+  .btn {
+    border-radius: 0.13rem;
+    padding: 0.44rem 0.94rem;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 0.88;
+    color: #fff;
+    box-shadow: 0 0 0.06rem transparent;
+    cursor: pointer;
+    border: 0.06rem solid transparent;
+    line-height: 1.5;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+      box-shadow 0.15s ease-in-out;
+    display: inline-block;
+    font-weight: 400;
+  }
+  .row {
+    max-width: 47.9rem;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .membership-offer-slider {
+    margin: 2.31rem 0 1.06rem;
+    width: 100%;
+    display: none;
+  }
+  .strong,
+  strong {
+    font-weight: 600 !important;
+  }
+  .insider-top-banner {
+    height: 16.88rem;
+    margin-bottom: 0.32;
+    background: #f9f9f9;
+    position: relative;
+    padding: 1.31rem 0 1.5rem;
+    .left-img {
+      display: none;
+    }
+    .right-img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: none;
+    }
+    .glammInsider-content {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 18.75rem;
+      transform: translate(-50%, -50%);
+      img {
+        width: 14.38rem !important;
+        margin-left: 2rem;
+      }
+      .insider-detail {
+        display: none;
+        margin: 1.25rem 0 0.95rem;
+        label {
+          display: block;
+          font-size: 1rem;
+          font-weight: 600;
+          margin-bottom: 0;
+        }
+        span {
+          font-size: 0.88rem;
+        }
+      }
+      .insider-reward {
+        padding: 0;
+        margin: 0;
+        li:first-child {
+          margin-left: 0;
+        }
+        li {
+          margin: 0 0.19rem;
+          width: 5.81rem;
+          display: inline-block;
+        }
+      }
+      .insider-notlogin {
+        .join-now {
+          margin: 1.69rem 0 0.62rem;
+        }
+        div {
+          font-size: 1.12rem;
+          a {
+            font-size: 18px;
+            font-weight: 600;
+            margin-left: 13px;
+          }
+        }
+      }
+    }
+  }
+  .insider-membership-card {
+    background: #fff;
+    padding: 0.62rem;
+    .row {
+      max-width: 46.12rem;
+    }
+    h2 {
+      text-align: center;
+      font-size: 1.12rem;
+      font-weight: 600;
+      margin: 0.81rem 0;
+      position: relative;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.62rem;
+      margin-bottom: 1.12rem;
+    }
+    .print-card {
+      margin-top: 0;
+      display: none;
+    }
+    .glammInsider-card {
+      width: 100%;
+      padding: 0;
+      figure {
+        width: 19rem;
+        position: relative;
+        margin: 0 auto;
+        figcaption {
+          position: absolute;
+          bottom: 0.69rem;
+          width: 100%;
+          padding: 0 0.75rem;
+        }
+      }
+    }
+  }
+  .insider-reward-never-end {
+    background: #fff;
+    .row {
+      display: block;
+    }
+    h2 {
+      text-align: center;
+      font-weight: 600;
+      margin: 0.81rem 0;
+      position: relative;
+      width: 100%;
+      padding: 0 1.25rem;
+      font-size: 1.25rem;
+    }
+    h4 {
+      text-align: center;
+      font-size: 1.25rem;
+      letter-spacing: 0.063rem;
+      font-weight: 600;
+      margin: 0 0 0.63rem;
+    }
+    ul {
+      margin: 0 auto;
+      padding: 0;
+      width: 19.06rem;
+      li {
+        width: 100%;
+        padding: 1.56rem 0.18rem;
+        .fullwidth {
+          position: relative;
+          padding-left: 4.88rem;
+          font-size: 1.12rem;
+          font-weight: 300;
+          img {
+            max-height: 3.69rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+          }
+        }
+      }
+    }
+    .insider-reward-never-end-footer {
+      text-align: center;
+      margin-bottom: 1.88rem;
+      span {
+        font-size: 1.12rem;
+        margin-bottom: 0.62rem;
+        margin-top: 0.62rem;
+      }
+    }
+    .insider-reward-never-content {
+      font-size: 0.75rem;
+      line-height: 1.12rem;
+      margin-bottom: 1.56rem;
+    }
+    .membership-offer-card {
+      .offer-card.bg-one {
+        background: #725049;
+        background: linear-gradient(to bottom, #725049 1%, #e6bc74 100%);
+        span {
+          color: #fff;
+        }
+      }
+      .offer-card {
+        border-radius: 0.88rem;
+        position: relative;
+        padding: 1.25rem 0.88rem 2.37rem;
+        width: 16.81;
+        height: 10.69rem;
+        margin: 0 auto;
+      }
+      h3 {
+        text-align: center;
+        font-size: 1.62rem;
+        font-weight: 600;
+        position: relative;
+        margin: 0 0 0.31rem;
+      }
+      .membership-offer-subtitle {
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        font-size: 0.62;
+        margin-bottom: 0.44rem;
+      }
+      span {
+        display: block;
+        line-height: normal;
+        font-weight: 300;
+      }
+      .membership-offer-shopat {
+        font-size: 0.5rem;
+        letter-spacing: 0.04rem;
+        margin-bottom: 0.44rem;
+      }
+      .useCode {
+        font-size: 1rem;
+        letter-spacing: 0.04rem;
+        margin-top: 2.88rem;
+      }
+    }
+  }
+  .glammInsider-fda {
+    padding: 1.25rem 0;
+    background: #fff;
+    .left-img,
+    .right-img {
+      display: none;
+    }
+    .row {
+      display: block;
+    }
+    h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18rem;
+      line-height: 2.18rem;
+      margin-top: 0;
+      width: 100%;
+      span {
+        font-size: 1.25rem;
+        font-weight: 400;
+        display: block;
+      }
+    }
+    .insider-share-point {
+      padding-left: 7.18rem;
+      ul {
+        width: 100%;
+        padding: 0;
+        position: relative;
+        &::after {
+          content: "";
+          background: #bf9b30;
+          width: 0.06rem;
+          position: absolute;
+          left: -1.25rem;
+          top: 0;
+          bottom: 0;
+        }
+        li {
+          width: 100%;
+          text-align: left;
+          font-size: 1.25rem;
+          span {
+            display: block;
+            font-size: 1rem;
+            margin: 9px 0 6px;
+          }
+          .btn {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            background: #000;
+            color: #fff;
+            padding: 5px 10px;
+          }
+        }
+        img {
+          width: 93px;
+          height: 210px;
+        }
+      }
+    }
+    .position-relative {
+      position: relative;
+      margin: 0 auto;
+      width: 19rem;
+    }
+    .fifty-plus {
+      position: absolute;
+      left: -8px;
+      top: 13px;
+      img {
+        width: 93px;
+        height: 210px;
+      }
+    }
+  }
+  .insider-reward-table {
+    background: #fff;
+    .row {
+      display: block;
+    }
+    h2 {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin: 0 0 20px;
+      width: 100%;
+    }
+    .table thead > tr > th {
+      border-bottom: 4px solid #bf9b30;
+      font-size: 15px;
+      font-weight: 600;
+      text-align: center;
+      span {
+        display: block;
+        font-weight: 400;
+        font-size: 9px;
+        margin-bottom: 5px;
+      }
+    }
+    .table tbody > tr > td {
+      padding: 18px 0;
+      vertical-align: middle;
+      span {
+        font-weight: 600;
+        font-size: 24px;
+      }
+    }
+    .table tbody > tr > td.first-col span {
+      margin-bottom: 13px;
+      display: block;
+      font-weight: 300;
+      font-size: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .table tbody > tr > td.text-left {
+      padding-left: 8px;
+      font-size: 10px;
+      font-weight: 300;
+    }
+    .insider-note {
+      border: 1px solid #e4e4e4;
+      border-left: 0;
+      border-right: 0;
+      padding: 20px 20px 0;
+      p {
+        font-size: 9px;
+        font-weight: 300;
+        line-height: 1;
+        letter-spacing: 0.8px;
+        margin-bottom: 21px;
+      }
+    }
+  }
+  .glammInsider-video {
+    padding-top: 20px;
+    background: #fff;
+    position: relative;
+    .btn {
+      margin: 40px 0;
+    }
+    .left-img,
+    .right-img {
+      display: none;
+    }
+    .row {
+      display: block;
+    }
+    h2 {
+      text-align: center;
+      font-size: 24px;
+      width: 100%;
+      font-weight: 600;
+      letter-spacing: 2px;
+      line-height: 35px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      span {
+        font-size: 20px;
+        font-weight: 400;
+        display: block;
+        letter-spacing: 1px;
+      }
+    }
+    .where-can-redeem-glamm {
+      ul {
+        margin: 0 0 32px;
+        padding: 0;
+        width: 100%;
+        li {
+          width: 100%;
+          padding: 10px 44px;
+          margin-bottom: 30px;
+          figure {
+            height: 120px;
+            border: 1px solid #000;
+            background: #fff;
+            position: relative;
+            figcaption {
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              font-size: 24px;
+              text-align: center;
+              width: 100%;
+              padding: 0 5px;
+              text-shadow: none;
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+    .process {
+      margin-bottom: 15px;
+      padding: 0 15px;
+      p {
+        max-width: 738px;
+        width: 100%;
+        line-height: 2;
+        margin: 0 auto 19px;
+      }
+    }
+    .still-have-question {
+      position: relative;
+      div h2 {
+        font-size: 24px;
+        font-weight: 600;
+        text-align: center;
+        width: 100%;
+        span {
+          display: block;
+          font-weight: 400;
+          margin-top: 0;
+        }
+      }
+      div figure {
+        a {
+          position: absolute;
+          margin: auto;
+          width: 58px;
+          height: 58px;
+        }
+      }
+    }
+  }
+  .glammInsider-faq {
+    padding-bottom: 49px;
+    background: #fff;
+    .cust-accordrion-panel-wrapper {
+      padding: 8px 0;
+      border-color: #e4e4e4;
+      .custom-accordion {
+        font-weight: 400;
+        font-size: 14px;
+        padding: 15px 25px 15px 20px;
+        letter-spacing: 0.5px;
+        &::after {
+          right: 6px;
+        }
+      }
+    }
+  }
+  .modal {
+    display: none;
+  }
+}

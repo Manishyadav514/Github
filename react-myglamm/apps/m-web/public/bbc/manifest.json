@@ -1,0 +1,29 @@
+{
+  "short_name": "BabyChakra Lite",
+  "name": "BabyChakra Lite",
+  "description": "BabyChakra | Pregnancy/Parenting Tips, Advice for Baby's Development",
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "app.babychakra.babychakra"
+    }
+  ],
+  "gcm_sender_id": "428654748253",
+  "icons": [
+    {
+      "src": "https://files.myglamm.com/site-images/original/bbc-logo-circle.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "https://files.babychakra.com/site-images/original/bbc-maskable-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/?utm_source=a2hs",
+  "display": "standalone",
+  "theme_color": "#FC88B0",
+  "background_color": "#FAC4CB"
+}

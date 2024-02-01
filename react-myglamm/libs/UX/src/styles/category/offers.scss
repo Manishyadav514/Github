@@ -1,0 +1,41 @@
+.offers-wrapper {
+  ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .m-offer {
+    h1 {
+      font-size: 22px;
+      text-align: center;
+      font-weight: 600;
+      margin-top: 55px;
+    }
+
+    figure {
+      margin-top: 20px !important;
+    }
+  }
+  .m-offer-additional-perks {
+    padding: 0 1rem;
+    h2 {
+      font-size: 22px;
+      text-align: center;
+      font-weight: 600;
+      margin-top: 20px;
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+    ul {
+      li {
+        width: 100%;
+        margin-bottom: 10px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

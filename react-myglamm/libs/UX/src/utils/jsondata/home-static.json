@@ -1,0 +1,466 @@
+{
+  "creators_testimonials": {
+    "title": "What are our Bloggers saying",
+    "subTitle": "",
+    "cards": [
+      {
+        "text": "I love the Babychakra blogging program. I like to do blogging, under this program I have got a chance to blog. Very interesting, and there is so much to learn. Here many moms share their art and crafts so I have learned a lot. There are many contests here at the time of divided festivals in which we all participate and enjoy. Thank you so much baby chakra give me chance..🤝🤝",
+        "image": "https://cdn-df.babychakra.com/creators-program/sweetie-badani.png",
+        "name": "Sweetie Badani"
+      },
+      {
+        "name": "Mihir Dodiya",
+        "text": "Being a new parent, I love this BBC program as it is very easy to use and operate. Most important is their team and staff, who always support very patiently and help for any query/problems.",
+        "image": "https://cdn-df.babychakra.com/creators-program/mihir-dodiya.png"
+      },
+      {
+        "name": "Dr. Mariya Vohra",
+        "text": "Sharing my motherhood journey with all-new moms and mom to be was my passion, the motto behind was to spread awareness and let all mom feels that they are not alone in this journey. Baby chakra gave me the platform to share all my beautiful thoughts and I love helping the mom community on India's largest platform for Mom and mom-to-be.",
+        "image": "https://cdn-df.babychakra.com/creators-program/mariya-vohra.png"
+      },
+      {
+        "name": "Shivani Mahendru",
+        "text": "I attended Babychakra online zoom meeting.It's an amazing parenting app and a very good products. The Babychakra program is beneficial...Dr and the counselor give beneficial information best parenting apps for a new parent",
+        "image": "https://cdn-df.babychakra.com/creators-program/shivani-mahendru.png"
+      },
+      {
+        "name": "Dr sayali lokhande karvir",
+        "text": "Blog with babychakra is a platform specially created to give a space for new creators to express, interact, and connect with others. It's great to be a part of baby chakra and to explore this blogging journey with them. It was terrific to get rewarded as a token of love from babychakra.",
+        "image": "https://cdn-df.babychakra.com/creators-program/sayali-lokhande.png"
+      },
+      {
+        "name": "Mahima Mittal  ",
+        "text": "Thank you for noticing, I put a lot of time and effort into writing blogs for baby Chakra, and try to me it interesting and useful to everyone. Everyone on the team is really very sweet Thank you for all the badges and appreciation.",
+        "image": "https://cdn-df.babychakra.com/creators-program/mahima-mittal.png"
+      },
+      {
+        "name": "Megha ",
+        "text": "As and when I have posted my 1st ever blog on babychakra. it feels great. . I got an opportunity to write what I feel about various things around me ... It's an easy platform to express myself on various topics.. Thanks",
+        "image": "https://cdn-df.babychakra.com/creators-program/megha.png"
+      },
+      {
+        "name": "Sakshi Bansal",
+        "text": "Blog with BabyChakra is an amazing platform where moms can share their experiences with other moms and also earn some money in the process. It is empowering women to be financially strong while taking care of their babies. I am blessed to be a part of this program and intend to make the most of this opportunity ❤️",
+        "image": "https://cdn-df.babychakra.com/creators-program/sakshi-bansal.png"
+      },
+      {
+        "name": "Mridula Khanna Arora ",
+        "text": "Feel so elated and humbled to be part of the Baby Chakra Family. It feels like a dream to be part of this huge community where women support each other",
+        "image": "https://cdn-df.babychakra.com/creators-program/mridula-khanna.png"
+      },
+      {
+        "name": "Unis Nadar",
+        "text": " Hi all, my name is Unis. I am a physiotherapist by profession and an insta blogger by choice. When I became a mom, theoretically I knew so many things but I failed when it came to actual things. Someone introduced me to the blogs by babychakra and it has been such a boon. From baby milestones to baby meals, vaccines, and weight issues there are various articles that can really help a mom, especially a new mom in a nuclear setup.",
+        "image": "https://cdn-df.babychakra.com/creators-program/unis-nadar.png"
+      }
+    ]
+  },
+  "ingredients": {
+    "list": {
+      "title": "",
+      "subtitle": "",
+      "cards": [
+        {
+          "name": "Triclosan",
+          "initial": "T",
+          "category": "<p>Antibacterial agent/Preservative</p>",
+          "description": "<p>Antibacterial, antifungal, and preservative that is added to any cleansing products meant to reduce bacteria. It has been banned by the FDA because it is toxic for human usage.</p>",
+          "effect": "<p>Contact dermatitis Skin irritation reaction </p>",
+          "foundIn": "<p>Soaps, Washes, Cosmetics </p>",
+          "image": "https://files.babychakra.com/site-images/original/img-triclosan.png",
+          "productName": "<p>Triclosan-Free Natural Foaming Handwash</p>",
+          "cta": "/product/natural-foam-handwash-for-kids-200ml.html?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Sodium Lauryl Sulfate- SLS(Sulfate Free)",
+          "initial": "S",
+          "category": "<p>Surfactant</p>",
+          "description": "<p>A form of surfactant that is harmful for use because it can penetrate the skin layer and irritate it. It is also a known form of carcinogen.</p>",
+          "effect": "<p>Carcinogenic Dermatological irritation - hair loss, skin irritation </p>",
+          "foundIn": "<p>Cleaning products </p>",
+          "image": "https://files.babychakra.com/site-images/original/img-sodium-laury.png",
+          "productName": "<p>SLS-Free Hibiscus Baby Shampoo</p>",
+          "cta": "/product/natural-strengthening-baby-shampoo.html?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Sodium Laureth Sufate - SLES (Sulfate Free)",
+          "initial": "S",
+          "category": "<p>Surfactant</p>",
+          "description": "<p>A form of highly toxic surfactant that can be irritating to the eyes, skin, and lungs. Banned in Europe.</p>",
+          "effect": "<p>Skin & eye irritation Carcinogenic Affects lungs & induces nausea </p>",
+          "foundIn": "<p>Shampoo & cleaning products </p>",
+          "image": "https://files.babychakra.com/site-images/original/img-sodium-laury-2.png",
+          "productName": "<p>SLS-Free Hibiscus Baby Shampoo</p>",
+          "cta": "/product/natural-strengthening-baby-shampoo.html?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Soap",
+          "initial": "S",
+          "category": "<p>Cleaning</p>",
+          "description": "<p>A cleaning agent that can irritate the pH of your baby's skin. It can also disrupt hormones, irritate skin, and flare up allergic reactions</p>",
+          "effect": "<p>Increased inflammation Nausea pH disbalance</p>",
+          "foundIn": "<p>Cleaning products </p>",
+          "image": "https://files.babychakra.com/site-images/original/img-soap.png",
+          "productName": "<p>Soap-Free Rose Baby Wash </p>",
+          "cta": "/product/moisturizing-baby-wash.html?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Nano Zinc Oxide",
+          "initial": "N",
+          "category": "<p>Sunscreen, to treat rashes</p>",
+          "description": "<p>Super small zinc oxide particles that can penetrate the skin and end up in their bloodstream or lungs. </p>",
+          "effect": "<p>Skin Irritation</p>",
+          "foundIn": "<p>Sunscreen or Diaper Rash Creams</p>",
+          "image": "https://files.babychakra.com/site-images/original/img-nano-zinc-oxide.png",
+          "productName": "<p>Non-Nano Zinc Oxide Diaper Rash Cream</p>",
+          "cta": "/product/diaper-rash-cream-50-gm.html?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Phenoxyethanol",
+          "initial": "P",
+          "category": "<p>Preservatives</p>",
+          "description": "<p>Common preservative found in many personal care products. Its long-term usage is also linked to nervous system damage.</p>",
+          "effect": "<p>Eczema Hives Skin Irritation</p>",
+          "foundIn": "<p>Personal care products</p>",
+          "image": "https://files.babychakra.com/site-images/original/img-phenoxyethanol.png",
+          "productName": "<p>Toxin-Free Baby Care Range</p>",
+          "cta": "https://shop.babychakra.com?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+
+        {
+          "name": "BHT",
+          "initial": "B",
+          "category": "<p>Preservatives</p>",
+          "description": "<p>A form of preservative that is used in many personal care products. It's a toxic substance to use on skin.</p>",
+          "effect": "<p>Carcinogenic Skin Irritation Organ System Toxicity</p>",
+          "foundIn": "<p>Lip & hair products Shampoos Deodorants Fragrance Creams</p>",
+          "image": "https://files.babychakra.com/site-images/original/img-bht.png",
+          "productName": "<p>BHT-Free Nourishing Lip Balm Duo</p>",
+          "cta": "/product/nourishing-lip-balm-duo-9g-2022.html?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "DEET",
+          "initial": "D",
+          "category": "<p>Mosquito repellent active ingredient</p>",
+          "description": "<p>An active ingredient used in mosquito repellents. A known neurotoxin, it can get absorbed easily through the skin and cause severe reactions in the nervous system and skin, especially in babies.</p>",
+          "effect": "<p>Skin Blister Seizure Memory Loss Stiffness in Joints Shortness of Breath Skin Irritation</p>",
+          "foundIn": "<p>Bug sprays Wipes Mosquito repellents</p>",
+          "image": "https://files.babychakra.com/site-images/original/img-deet.png",
+          "productName": "<p>DEET-Free Mosquito Repellent Patches</p>",
+          "cta": "/product/100-natural-mosquito-repellent-patches.html?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Camphor",
+          "initial": "C",
+          "category": "<p>Painkiller</p>",
+          "description": "<p>A highly toxic compound that can be fatal for infants and children on ingestion - even in really small doses. </p>",
+          "effect": "<p>Breathing/Respiratory Issues Headaches Dizziness (in extreme cases) Death</p>",
+          "foundIn": "<p>Ointments Used raw</p>",
+          "image": "https://files.babychakra.com/site-images/original/img-camphor.png",
+          "productName": "<p>Camphor-Free Natural Vapour Patch</p>",
+          "cta": "/product/natural-vapour-patch-5-patches.html?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Paraben",
+          "initial": "P",
+          "category": "<p>Preservatives</p>",
+          "description": "<p>A form of preservative that is known to cause endocrine disruption, meaning it can disturb the immune and nervous system and mess with the hormonal activities.</p>",
+          "effect": "<p>Skin Irritation Endocrine Disruption</p>",
+          "foundIn": "<p>Cleaning Products Fragrances Daily Hygiene Products</p>",
+          "image": "https://files.babychakra.com/site-images/original/img-paraben.png",
+          "productName": "<p>Paraben-Free Baby Care Range</p>",
+          "cta": "/collection/view-all-products?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Mineral Oil",
+          "initial": "M",
+          "category": "<p>Emmolient</p>",
+          "description": "<p>An emollient that is linked to contamination with carcinogenic/highly toxic substances. It is also toxic to the aquatic life.</p>",
+          "effect": "<p>Skin Rash Itching Hives</p>",
+          "foundIn": "<p>Skin & Hair Products</p>",
+          "image": "https://files.babychakra.com/site-images/original/img-mineral-oil.png",
+          "productName": "<p>100% Organic Coconut Oil</p>",
+          "cta": "/product/organic-coconut-oil-100ml.html?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+
+        {
+          "name": "Petroleum Jelly",
+          "initial": "P",
+          "category": "<p>Moisturizer</p>",
+          "description": "<p>A moisturizing agent that is linked to contamination with carcinogenic/highly toxic substances. It is most commonly used as an ointment to relieve symptoms of dry, flaky skin. </p>",
+          "effect": "<p>Skin Rash Itching Swelling Respiratory Issues Can cause allergic flare-ups</p>",
+          "foundIn": "<p>Moisturizers</p>",
+          "image": "https://files.babychakra.com/site-images/original/img-mineral-oil.png",
+          "productName": "<p>Toxin-Free Baby Care Range</p>",
+          "cta": "/collection/view-all-products?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+
+        {
+          "name": "Lanolin",
+          "initial": "L",
+          "category": "<p>Humectant</p>",
+          "description": "<p>A fat-derived substance that comes from animals (sheeps). Listed in PETA's Caring Consumer guide as an animal-sourced product. </p>",
+          "effect": "<p>Skin Burning Stinging Redness Irritation</p>",
+          "foundIn": "<p>Ointments & Lotions</p>",
+          "image": "https://files.babychakra.com/site-images/original/img-lanolin.png",
+          "productName": "<p>Lanolin-Free Diaper Rash Cream</p>",
+          "cta": "/product/diaper-rash-cream-50-gm.html?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Propylene Glycol",
+          "initial": "P",
+          "category": "<p>Humectant</p>",
+          "description": "<p>A form of organic alcohol that is used as a skin-conditioning substance. It can cause irritation, flare up allergies, and give way to contact dermatitis. </p>",
+          "effect": "<p>Toxicity to Central Nervous System Seizures Contact Dermatitis</p>",
+          "foundIn": "<p>Medication Cosmetic Products</p>",
+          "image": "https://files.babychakra.com/site-images/original/img-propylene-glycol.png",
+          "productName": "<p>Toxin-Free Rose Baby Wash</p>",
+          "cta": "/product/moisturizing-baby-wash.html?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Polyquaternium-22",
+          "initial": "P",
+          "category": "<p>Conditioner</p>",
+          "description": "<p>Common substances used in cosmetic formulations which can be carcinogenic to humans and can be absorbed into the bloodstream through the skin.</p>",
+          "effect": "<p>Allergy flare-ups Carcinogen</p>",
+          "foundIn": "<p>Cosmetic Products</p>",
+          "image": "https://files.babychakra.com/site-images/original/img-polyquaternium.png",
+          "productName": "<p>Toxin-Free Baby Care Range</p>",
+          "cta": "/collection/view-all-products?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Polyquaternium-6",
+          "initial": "P",
+          "category": "<p>Conditioner</p>",
+          "description": "<p>Common substances used in cosmetic formulations which can be carcinogenic to humans and can be absorbed into the bloodstream through the skin.</p>",
+          "effect": "<p>Allergy flare-ups Carcinogen</p>",
+          "foundIn": "<p>Cosmetic Products</p>",
+          "image": "https://files.babychakra.com/site-images/original/img-polyquaternium.png",
+          "productName": "<p>Toxin-Free Baby Care Range          </p>",
+          "cta": "/collection/view-all-products?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Polyquaternium-7",
+          "initial": "P",
+          "category": "<p>Conditioner</p>",
+          "description": "<p>Common substances used in cosmetic formulations which can be carcinogenic to humans and can be absorbed into the bloodstream through the skin.</p>",
+          "effect": "<p>Allergy flare-ups Carcinogen</p>",
+          "foundIn": "<p>Cosmetic Products</p>",
+          "image": "https://files.babychakra.com/site-images/original/img-polyquaternium.png",
+          "productName": "<p>Toxin-Free Baby Care Range          </p>",
+          "cta": "/collection/view-all-products?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Polyquaternium-81",
+          "initial": "P",
+          "category": "<p>Conditioner</p>",
+          "description": "<p>Common substances used in cosmetic formulations which can be carcinogenic to humans and can be absorbed into the bloodstream through the skin.</p>",
+          "effect": "<p>Allergy flare-ups Carcinogen</p>",
+          "foundIn": "<p>Cosmetic Products</p>",
+          "image": "https://files.babychakra.com/site-images/original/img-polyquaternium.png",
+          "productName": "<p>Toxin-Free Baby Care Range          </p>",
+          "cta": "/collection/view-all-products?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Ethyl Alcohol (Alcohol free)",
+          "initial": "E",
+          "category": "<p>Antibacterial</p>",
+          "description": "<p>An antibacterial substance used in various cosmetic products. It can affect concentration and vision and dries out skin & hair. </p>",
+          "effect": "<p>Headache Drowsiness Nausea Unconsciousness</p>",
+          "foundIn": "<p>Cosmetic Products</p>",
+          "image": "https://files.babychakra.com/site-images/original/img-ethyl-alcohol.png",
+          "productName": "<p>Toxin-Free Baby Care Range</p>",
+          "cta": "/collection/view-all-products?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Artificial Fragrances",
+          "initial": "A",
+          "category": "Fragrance",
+          "description": "Synthetic chemicals like phthalates, benzophenone & styrene found in fragrances are petroleum-based. They can be toxic to health & cause allergic reactions.",
+          "effect": "Allergy flare-ups Headache Skin & eye irritation Respiratory Issues",
+          "foundIn": " Moisturisers Cleansers Body washes Shampoos Conditioners Soaps & Deodorants Candles",
+          "image": "https://files.babychakra.com/site-images/original/img-artificial-fragrances.png",
+          "productName": "Artificial Fragrance Free Baby Care Range",
+          "cta": "/collection/view-all-products?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Chemical sunscreen- Avobenzone",
+          "initial": "C",
+          "category": "<p>Sunscreen agent</p>",
+          "description": "<p>A substance used in sunscreens which can turn toxic when exposed to chlorine and can cause the generation of free radicals within the skin.</p>",
+          "effect": "<p>Rash Itching Swelling Dizziness</p>",
+          "foundIn": "<p>Sunscreen</p>",
+          "image": "https://files.babychakra.com/site-images/original/img-chemical-sunscreen-avobenzone.png",
+          "productName": "<p>Toxin-Free Carrot Baby Sunscreen</p>",
+          "cta": "/product/moisturizing-natural-baby-sunscreen-60gm.html?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Ammonium lauryl sulfate",
+          "initial": "A",
+          "category": "Surfactant",
+          "description": "A surfactant that is used to remove oil. As a result, it can lead to overly dry, itchy skin even in adults. This abrasive substance would be even more harmful to a child's skin.",
+          "effect": "Inflammation Redness Itching",
+          "foundIn": "Cleansing Products",
+          "image": "https://files.babychakra.com/site-images/original/img-ammonium-lauryl-sulfate.png",
+          "productName": "Toxin-Free Hibiscus Baby Shampoo ",
+          "cta": "/product/natural-strengthening-baby-shampoo.html?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Chemical sunscreen - Octinoxate",
+          "initial": "C",
+          "category": "<p>Sunscreen agent</p>",
+          "description": "<p>A substance found in sunscreens which can lead to endocrine disruption which means it can potentially end up affecting the immune and nervous systems.</p>",
+          "effect": "<p>Reproductive Toxicity Endocrine Disruption</p>",
+          "foundIn": "<p>Sunscreen</p>",
+          "image": "https://files.babychakra.com/site-images/original/img-chemical-sunscreen-octinoxate.png",
+          "productName": "<p>Toxin-Free Carrot Baby Sunscreen</p>",
+          "cta": "/product/moisturizing-natural-baby-sunscreen-60gm.html?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Chemical sunscreen - Oxybenzone",
+          "initial": "C",
+          "category": "<p>Sunscreen agent</p>",
+          "description": "<p>The most commonly used substance in sunscreen. It is linked to endocrine disruption, organ system toxicity, contact allergies, and photoallergies, meaning exposure to light is required to generate an allergic response. Banned in Hawaii to protect coral reefs.</p>",
+          "effect": "<p>Allergy flare-ups Skin & eye irritation</p>",
+          "foundIn": "<p>Sunscreen</p>",
+          "image": "https://files.babychakra.com/site-images/original/Chemical-sunscreen---Oxybenzone-3.png",
+          "productName": "<p>Toxin-Free Carrot Baby Sunscreen</p>",
+          "cta": "/product/moisturizing-natural-baby-sunscreen-60gm.html?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Chemical Sunscreen - Benzophenone",
+          "initial": "C",
+          "category": "<p>Sunscreen agent</p>",
+          "description": "<p>A chemical used in sunscreens, personal care products, cosmetics, and fragrances. Strong evidence indicates that it is a carcinogen and there is also evidence of this chemical causing endocrine disruption.</p>",
+          "effect": "<p>Possible Carcinogen Endocrine Disruption</p>",
+          "foundIn": "<p>Sunscreen</p>",
+          "image": "https://files.babychakra.com/site-images/original/img-chemical-sunscreen-oxybenzone-2.png",
+          "productName": "<p>Toxin-Free Carrot Baby Sunscreen</p>",
+          "cta": "/product/moisturizing-natural-baby-sunscreen-60gm.html?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Formaldehyde",
+          "initial": "F",
+          "category": "<p>Preservatives</p>",
+          "description": "<p>The use of this preservative has short as well as long-term health impacts. It is used in a variety of products and it can cause an array of issues including irritation to the eyes & skin, allergic reactions, skin rashes and even cancer.</p>",
+          "effect": "<p>Skin & Eye Irritation Allergy flare-ups Cancer</p>",
+          "foundIn": "<p>Personal Care Products Cosmetics</p>",
+          "image": "https://files.babychakra.com/site-images/original/img-formaldehyde.png",
+          "productName": "<p>Toxin-Free Bamboo Water Wipes</p>",
+          "cta": "/product/bamboo-water-wipes.html?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        },
+        {
+          "name": "Hydroquinone",
+          "initial": "H",
+          "category": "<p>Aromatic compound</p>",
+          "description": "<p>A compound found in skin-lightening creams. It is linked to cancer, organ toxicity, and skin irritation.</p>",
+          "effect": "<p>Dermatitis  Mild Burning Stinging Redness Dryness</p>",
+          "foundIn": "<p>Ointments</p>",
+          "image": "https://files.babychakra.com/site-images/original/img-formaldehyde-2.png",
+          "productName": "<p>Toxin-Free Diaper Rash Cream</p>",
+          "cta": "/product/diaper-rash-cream-50-gm.html?utm_source=website&utm_medium=marketing&utm_campaign=label_padho_moms"
+        }
+      ]
+    }
+  },
+  "baby_name": {
+    "testimonials": {
+      "title": "Moms Love us!",
+      "subTitle": "",
+      "cards": [
+        {
+          "text": "Thank you Babychakra for being awesome experience. There are many apps but this is amazing and wonderful as moms here are helpful, caring, loving as well as inspiring. Each day everyone helps each other with their valuable experiences and advices to make each moment of parenthood smooth and easy. Easy parenting as dream come true. Let us all cherish the app and enjoy ... ",
+          "image": "https://cdn-sp.babychakra.com/users/normal/11160/profile_5d7ad20203f61.jpeg",
+          "name": "Richa Chowdhary"
+        },
+        {
+          "name": "Rebecca Prakash",
+          "text": "I'm overwhelmed to see the wishes and concerns from our beloved Baby Chakra family. Everyone is blessed to be part of this wonderful forum, My mom and Husband kept asking me if I have updated in Baby Chakra about our daughter's birthday. BC you are more than our family. Thank you very much my friends ",
+          "image": "https://cdn-sp.babychakra.com/users/normal/140837/profile_5f7e1061610ae.jpg"
+        },
+        {
+          "name": " Zeba Soudagar",
+          "text": "Last night I told my husband that my cousin brother Is getting married next month and I asked him to guess the bride name. The bride name is Zaara ( that's my daughters name too ). After few wrong guesses he asked for a hint. I told him that  the name is very special for me and I love it a lot. His promt ans was is he getting married to Babychakra?? I bursted into laugh...",
+          "image": "https://cdn-sp.babychakra.com/users/normal/90265/profile_5b307f6117498.jpg"
+        },
+        {
+          "name": " Satarupa B Kaur",
+          "text": "It feels so good to be part of a community where you get to share your Gyan and someone really bothers to listen to it. Yaar that's empowering and gives me a boost to go ahead and make someone else feel pacified.; BabyChakra has given me these wings to go ahead and ask buddies when am low plus given me the scope timeshare what I know with my buddies here. Felt so good to ...",
+          "image": "https://cdn-sp.babychakra.com/users/normal/178575/profile_5aa7bb1ec369e.jpg"
+        },
+        {
+          "name": " Merline Thomson",
+          "text": "From the time I came 2 know that I m carrying a baby in my womb, Baby chakra was with me in each and every moment. I got many friends from here, who cleared my doubts nd shared good and bad moments. But the thing which made me very sad was 4 last one and half months I could not use baby chakra as my mobile was spoiled.; I was missing u all a lot, especially the last days ...",
+          "image": "https://cdn-sp.babychakra.com/users/normal/139457/profile_5977095445267.jpg"
+        }
+      ]
+    }
+  },
+  "faq_ovulation": [
+    {
+      "id": 1,
+      "title": " How many days after a period is an ovulation?",
+      "text": "The first day of your period begins your menstrual cycle that continues until the first day of your next period. Ovulation generally occurs after your period ends when you will be at your most fertile period. However, the time between ovulation and the start of the next menstrual period may vary depending on the length of each person's cycle. So by using the <b> menstrual cycle calculator </b>, you can keep track of your menstrual cycle as well as ovulation days to conceive easily.",
+      "name": "How many days after a period is an ovulation?",
+      "answer": "The first day of your period begins your menstrual cycle that continues until the first day of your next period. Ovulation generally occurs after your period ends when you will be at your most fertile period. However, the time between ovulation and the start of the next menstrual period may vary depending on the length of each person's cycle. So by using the menstrual cycle calculator , you can keep track of your menstrual cycle as well as ovulation days to conceive easily."
+    },
+    {
+      "id": 2,
+      "title": "How many days after your period can you get pregnant?",
+      "text": "<span>If you haven’t used any contraception during intercourse, you can conceive at any point of time even during or after your menstrual cycle. To get the best result, you can start using an ovulation <b>period calculator</b> to detect the best ovulation days for hassle-free pregnancy. </span>",
+      "name": "How many days after your period can you get pregnant?",
+      "answer": "If you haven’t used any contraception during intercourse, you can conceive at any point of time even during or after your menstrual cycle. To get the best result, you can start using an ovulation period calculator to detect the best ovulation days for hassle-free pregnancy."
+    },
+    {
+      "id": 3,
+      "title": " How do you know if you are ovulating?",
+      "text": "<span>Ovulation normally occurs around 10 to 16 days before your period, so if you have a regular menstrual cycle, you might be able to predict when you'll ovulate. But note, around the time of ovulation, you will start noticing cervical mucus releasing from your body and certain other ovulation signs that tell you’re ovulating. The mucus will be in red-brown colour and slightly become wetter, clearer, and more slippery during ovulation. </span>",
+      "name": "How do you know if you are ovulating?",
+      "answer": "Ovulation normally occurs around 10 to 16 days before your period, so if you have a regular menstrual cycle, you might be able to predict when you'll ovulate. But note, around the time of ovulation, you will start noticing cervical mucus releasing from your body and certain other ovulation signs that tell you’re ovulating. The mucus will be in red-brown colour and slightly become wetter, clearer, and more slippery during ovulation."
+    },
+    {
+      "id": 4,
+      "title": "How long can you ovulate?",
+      "text": "<span>Ovulation starts happening once a month and lasts roughly up to 24 hours. If the egg doesn’t get fertilised within 12 to 24 hours, it will die. In that case, you should start tracking your ovulation days with the help of a perfect <b> ovulation calculator </b> tool to boost your chances of getting pregnant easily on time. </span>",
+      "name": "How long can you ovulate?",
+      "answer": "Ovulation starts happening once a month and lasts roughly up to 24 hours. If the egg doesn’t get fertilised within 12 to 24 hours, it will die. In that case, you should start tracking your ovulation days with the help of a perfect ovulation calculator tool to boost your chances of getting pregnant easily on time."
+    }
+  ],
+  "ovulation": {
+    "ovulation_prediction": [
+      {
+        "text": "<b>When Ovulation Result Comes Positive:</b> With the help of the OTC ovulation predictor kit, you can test the amount of luteinizing hormone (LH) in your urine. If the results come positive means you’re ovulating and now you can intimate with your partner to get pregnant easily."
+      },
+      {
+        "text": "<b>You Start Developing Sexual Desire:</b> Just before ovulation, a woman's desire for sex increases. Her urge for sex increases, and she also seems happier."
+      },
+      {
+        "text": "<b>Your Basal Body Temperature Gets Increased: </b> Even if you don't feel anything, this symptom might be a small indication of ovulation. As previously stated, your basal body temperature will increase and remain raised during ovulation."
+      },
+      {
+        "text": "<b>Breast Soreness:</b> As the rush of hormones starts catalysing in your body just before and after ovulation, you may start feeling some soreness in your breasts. Some women will feel tenderness immediately before ovulation, while others will feel tenderness after ovulation."
+      },
+      {
+        "text": "<b>Suffering From Headache and Nausea:</b> Can ovulation make you sick? The answer is yes, it can. Due to the fluctuation in estrogen and progesterone hormone levels in your body, nausea and headaches are two possible ovulation side effects that you can suffer during ovulation."
+      },
+      {
+        "text": "<b>Changes In Cervical Mucus:</b> Changes in cervical mucus are one of the major ovulation signs that you would notice. As you get closer to ovulation, your body starts creating more estrogen, which causes cervical mucus to stretch and clear like egg white, allowing sperm to swim to the egg released during ovulation. To test it out, insert a clean finger into your vagina, take out some mucus, and then stretch out the discharge between your thumb and finger to check for ovulation. It's a good indicator you're in a fertile phase if it's sticky or very moist and slippery. "
+      },
+      {
+        "text": "<b>Pain In Lower Abdomen:</b> You may go through a strong or dull cramp on the side of your abdomen during the ovulation where the ovary releases the egg. The duration of this ovulation side effect might range from a few minutes to hours."
+      },
+      {
+        "text": "<b>Brown Discharge:</b> During ovulation, brown discharge is quite usual. When the follicle surrounds and protects the developing oocyte or egg, it starts maturing, that is the time when the ovulation starts developing in the body. Over time, you may start observing red to brown discharge flowing from your body."
+      }
+    ],
+    "signs_of_ovulation": {
+      "text": "Ovulation symptoms are easy to detect. You&apos;ll be surprised how simple it is once you know how to use the <b>ovulation calculator </b> tool to look for. So, how do you know when you&apos;re ovulating and for how long? Here are the key ovulation indications as well as strategies to anticipate when ovulation can happen."
+    },
+    "prediction": {
+      "text": " Ovulation occurs around 14 days before your menstruation begins. You start ovulating around day 14 if you have a 28-day menstrual cycle. Your most fertile days would be days 12, 13 and 14. Whereas, if you have a 35-day menstrual cycle, then ovulation might occur around day 21 of a 35-day menstrual cycle, and your most fertile days would be days 19, 20, and 21. To predict the days of ovulation, you need to start trusting the <b> ovulation date calculator </b> that tells about the proximity of your ovulation days to conceive on time."
+    },
+    "what_is_ovulation_calc": {
+      "text": " The <b>ovulation calculator </b> estimates the chances of ovulation on specific days in your cycle and assists you in finding your most fertile days for that month. The calculator uses the starting day of your last period and the duration of your menstrual cycle to estimate when you can produce an egg. By using the <b> perfect ovulation calculator </b> you can get the estimated idea of intimating for pregnancy."
+    }
+  }
+}

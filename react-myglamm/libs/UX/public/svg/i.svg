@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11">
+    <g fill="none" fill-rule="evenodd" opacity=".7">
+        <circle cx="5.4" cy="5.4" r="5.4" fill="#AFAAAA"/>
+        <text fill="#FFF" font-family="AdobeHebrew-Italic, Adobe Hebrew" font-size="10.8" font-style="italic">
+            <tspan x="3.6" y="9">i</tspan>
+        </text>
+    </g>
+</svg>

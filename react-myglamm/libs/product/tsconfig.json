@@ -1,0 +1,30 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": "./",
+    "paths": {
+      "@libComponents/*": ["../UX/src/Components/*"],
+      "@libConstants/*": ["../UX/src/Constants/*"],
+      "@libAnalytics/*": ["../UX/src/Analytics/*"],
+      "@libPages/*": ["../UX/src/pages/*"],
+      "@libHooks/*": ["../UX/src/hooks/*"],
+      "@libAPI/*": ["../UX/src/lib/*"],
+      "@libStore/*": ["../UX/src/store/*"],
+      "@libStyles/*": ["../UX/src/styles/*"],
+      "@libUtils/*": ["../UX/src/utils/*"],
+      "@libServices/*": ["../UX/src/services/*"],
+      "@typesLib/*": ["../@types/*"],
+      "@checkoutLib/*": ["../checkout/src/*"]
+    }
+  },
+  "exclude": [],
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
+}

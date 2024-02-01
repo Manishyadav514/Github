@@ -1,0 +1,205 @@
+/* swiper */
+
+.swiper-container {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+
+.swiper-wrapper {
+  position: relative;
+  width: 15rem;
+  height: 100%;
+  z-index: 1;
+  /* display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox; */
+  display: flex;
+  /* -webkit-transition-property: -webkit-transform;
+   transition-property: -webkit-transform;
+   -o-transition-property: transform;
+   transition-property: transform; */
+  transition-property: transform, -webkit-transform;
+  /* -webkit-box-sizing: content-box; */
+  box-sizing: content-box;
+}
+.swiper-slide {
+  flex-shrink: 0;
+  width: 375px;
+  height: 100%;
+  position: relative;
+  transition-property: transform, -webkit-transform;
+}
+
+.look-template-box {
+  float: left;
+  text-align: left;
+  width: auto;
+  margin-right: 16px;
+}
+
+.pose-product-gallery .pose-pro-desc {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.pose-product-gallery .pose-pro-price {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Cory Walia */
+
+.cory-banner {
+  margin: 0;
+  padding: 0 10px;
+  background: #f5f5f5;
+
+  .hide-for-mob {
+    display: none;
+  }
+  .row {
+    max-width: 767px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .banner-box {
+    display: table;
+    margin: 0;
+    .two-col {
+      float: left;
+      width: 100%;
+      img {
+        width: 100%;
+      }
+      .ico-play {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        width: 16px;
+      }
+      a {
+        display: block;
+        position: relative;
+      }
+    }
+    .two-col.two {
+      vertical-align: middle;
+      color: rgb(206, 202, 202);
+      text-align: center;
+      width: 100%;
+      padding: 30px 15px 15px;
+      h1 {
+        margin: 0 0 22px;
+        text-transform: uppercase;
+        font-size: 40px;
+        font-weight: normal;
+        line-height: 21px;
+        span {
+          background: #acabab;
+          font-weight: 400;
+          letter-spacing: 4px;
+          color: #fff;
+          font-size: 11px;
+          padding: 4px 5px;
+        }
+      }
+      p {
+        margin-bottom: 8px;
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 20px;
+      }
+    }
+    h5 {
+      font-size: 16px;
+      line-height: 18px;
+      margin: 0 0 9px;
+    }
+  }
+}
+.cory-product {
+  background: #fff;
+  padding: 30px 0 0;
+  h2 {
+    font-size: 26px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    span {
+      font-weight: normal;
+    }
+  }
+  p {
+    text-align: center;
+    font-size: 14px;
+    margin: 20px 0 0;
+    padding: 0 20px 20px;
+  }
+}
+.cory-video-gallery {
+  h4 {
+    text-align: left;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 20px 0 0px;
+  }
+
+  p {
+    text-align: left;
+    font-size: 11px;
+    padding: 20px 0 20px;
+  }
+  .cory-video-sec {
+    margin: 0;
+    .two-col.two {
+      padding: 0;
+    }
+  }
+  .pose-imageGallery {
+    background: #f5f5f5;
+    padding: 10px 0 0;
+  }
+}
+.cory-form-sec {
+  background: #fff;
+  padding: 0 10px;
+  h2 {
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 26px;
+    margin: 40px 0 0;
+    width: 100%;
+    span {
+      font-weight: normal;
+    }
+  }
+  p {
+    text-align: center;
+    font-size: 14px;
+    padding: 0 20px;
+  }
+}
+.cory-blog {
+  background: #fff;
+  figure figcaption {
+    text-align: center;
+    background: none;
+    h3 {
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: normal;
+    }
+    p {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+/*cory walia*/

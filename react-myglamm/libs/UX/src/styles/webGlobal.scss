@@ -1,0 +1,96 @@
+@use "global.scss";
+
+body {
+  background: white;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.download-app-community-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  right: initial;
+  bottom: initial;
+  z-index: 9999;
+}
+
+.community-section {
+  margin-top: 2rem;
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &__left-sub {
+    position: fixed;
+    padding: 1rem;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 1rem;
+  }
+
+  &__component {
+    border: 1px solid #e0e0e0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .community-section {
+    &__left {
+      width: 360px;
+    }
+    &__left-sub {
+      position: static;
+    }
+    &__content {
+      display: block;
+      margin-left: 0;
+    }
+  }
+}
+
+/* This is just a placeholder button for Verloop */
+.verloop-button-f {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2147483647;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: -1px 2px 10px rgba(0, 0, 0, 0.28);
+  transition: all 200ms ease-in-out;
+  transform: none;
+  opacity: 1;
+}
+
+.verloop-button-f strong {
+  font-weight: 600;
+}
+
+.verloop-livechat-logo-f {
+  height: 60px;
+  width: 60px;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAALEwAACxMBAJqcGAAAAVlpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KTMInWQAAA/NJREFUWAm9l9uLjWscx2ctQyF7a1PkQpTa7Z19obYk0oQbuRLKFcrFVi5cqP1PYB9y4UJy4QJlKCnuXZAGETU0RWqiHCOHzRx8Ps/7/tY8611rzB6t8avv+/zOh+d5D2vVusah0dHROqZ6rVYbChd0P8P/Dn4Di8GPYBp4B56CftAHbhP3nrWLmBqLeYaV/xcRZNJE8N1gC+gFz8FE9AmHa+AAWJTnCf6rK0Hd4QC/FlwGVRpCIT6XCHm44jiA/EeWr5E7dE0rzg0HeCd4D4KczEIjE8Amwhc20WmuCyzG2qjxteL/FnHp+pFrdbLMPC5ro/9l1uvwS9s2gSE/87+yoDxBpp4U6665I1IfWNjUBIqaKJX74IMiKORJryMjbkKiOBaF8yDq1RtngnIFeAWkNHmWoNB+wzXLYRPR0f5yYB/1gjCeKfN3rHj0mzXhUyMNgiVWTh0g9MBvVQGl+4EXRyF14JrlMrcvJN8Pe0wdW7ADXuNnVxpiaSEDR1q0KCr++rjdLa7o8qm2I/9U5+LzuaH0Tg5Zx6rNZHEbtOGW5Jm/fvpMQ9fScOaHS5ev9TU6LwfLgJR2JOve4jZl8SCTq6+O6OThpy01TK6qn/lCt9qCvwLJBPkONGT0Z8F6sB3cBJEkEsXk97HtBD3gOOii2eSb9aFsbukXz++gXULxmpX3cVGW/LDMKvzTea9EfqEB0if8PsBvCj9X5ItA8u6PRzDPfcsd8JPajtJuYLjFEH4TZpdON1gflbyL00uD4LoMvnNcoavFUuysPDbzRu75NjBdAxTbWUhj8iqC5tKE33xpDYh7RjnOfTH8OhX4viXGvD3KEGLTE1Boufplim4aylJnc9IKcIoER1nngT/BD8Bz1Md4d8GC/+DnM/4Q7AIbgeSNmxjWfNCXfgdOYNkN4kZS5xQG6NzSIPakj6Q6QtFQIY1dqzmU9XXnLsQEY+5wWWKLGxDnnHjsUlMMgrn000cKvuqoPXa3P5gUwWBVZ/XqfDtG4jjzFFO5hC0mbJfPPKG/1tQAU0WRSt60KwZFYIs9U+jTlDdsYzMkzQDXK20dI6DTa2XAc8jPv2sDDOR94TE9A8dA+63SMAWUPyWHmH7Ae25KdyA7c+8t/+BY7xL4G0j1KW2AKS3i5P7OmAHugb3o/TZ0sw43NeCW4NARKqe3sGTxu2AbRR+XxdNfvryBUYzjPoZmqZJFAtiMFU48RC4L+Hq2xkWwGV1/Xhxd+hYYILlOagdImAK5ROMWC2gbBIfBERuqFtfBj9FMGcht6hTdIVEvOEnhhyZtV1y9Dfgr5gF4DfIjQZyQ3ALP+Q14AuLveR+FzRff/6a/+eqDvgAdeHSpWDn94wAAAABJRU5ErkJggg==");
+  background-size: 28px 28px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.clearfix:after {
+  clear: both;
+}

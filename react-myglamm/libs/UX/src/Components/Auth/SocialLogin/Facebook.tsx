@@ -1,0 +1,79 @@
+import React, { useState, useEffect } from "react";
+// @ts-ignore Missing Types
+import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
+import useTranslation from "@libHooks/useTranslation";
+import { SocialPayload } from "@typesLib/MyGlammAPI";
+
+const facebookToken = process.env.NEXT_PUBLIC_FACEBOOK_TOKEN;
+
+function FacebookSocialLogin(props: any) {
+  const { handleSocialLogin, btnClassName, btnStyle } = props;
+  const [facebookData, setFacebookData] = useState<any>();
+
+  const { t } = useTranslation();
+
+  const handleOnClick = (response: any) => {
+    setFacebookData(response);
+  };
+
+  useEffect(() => {
+    if (facebookData && facebookData.id) {
+      const payload: SocialPayload = {
+        type: "facebook",
+        id: facebookData.id,
+        name: facebookData.name,
+        email: facebookData.email || "",
+        dob: facebookData.birthday || "",
+        gender: facebookData.gender || "",
+      };
+
+      handleSocialLogin(payload);
+    }
+  }, [facebookData]);
+
+  return (
+    <FacebookLogin
+      callback={handleOnClick}
+      appId={facebookToken}
+      autoLoad={false}
+      isMobile={false}
+      fields="name,email,birthday,gender"
+      scope="public_profile,email,user_gender,user_birthday"
+      render={(renderProps: any) => (
+        <button type="button" className={btnClassName} style={btnStyle} onClick={renderProps.onClick}>
+          <svg className="absolute svgIcon-use" style={{ left: "15px" }} width="17" height="17" viewBox="0 0 17 17">
+            <defs>
+              <path id="hc665j1x9a" d="M0.001 0.001L16.32 0.001 16.32 16.316 0.001 16.316z" />
+            </defs>
+            <g fill="none" fillRule="evenodd">
+              <g>
+                <g>
+                  <g>
+                    <g transform="translate(-37 -553) translate(15 537) translate(22.08 16.32)">
+                      {/* <mask id="4nqbagq4qb" fill="#fff">
+                            <use xlink:href="#hc665j1x9a"/>
+                        </mask> */}
+                      <path
+                        fill="#1877F2"
+                        d="M16.32 8.208C16.32 3.675 12.667 0 8.16 0S0 3.675 0 8.208c0 4.097 2.984 7.493 6.885 8.108v-5.735H4.813V8.208h2.072V6.4c0-2.057 1.218-3.194 3.082-3.194.893 0 1.827.16 1.827.16v2.02h-1.03c-1.013 0-1.329.633-1.329 1.282v1.54h2.263l-.362 2.373H9.435v5.735c3.901-.615 6.885-4.011 6.885-8.108"
+                        mask="url(#4nqbagq4qb)"
+                      />
+                    </g>
+                    <path
+                      fill="#FFF"
+                      d="M11.407 10.585l.366-2.331H9.488V6.74c0-.638.319-1.26 1.342-1.26h1.04V3.496s-.944-.158-1.845-.158c-1.882 0-3.112 1.117-3.112 3.139v1.777H4.822v2.331h2.091v5.637c.42.064.85.098 1.288.098.438 0 .867-.034 1.287-.098v-5.637h1.92"
+                      transform="translate(-37 -553) translate(15 537) translate(22.08 16.32)"
+                    />
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+
+          <span className="absolute text-xs">&nbsp;&nbsp;{t("facebook")}</span>
+        </button>
+      )}
+    />
+  );
+}
+export default FacebookSocialLogin;

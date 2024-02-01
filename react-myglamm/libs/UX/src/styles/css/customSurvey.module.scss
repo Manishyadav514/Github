@@ -1,0 +1,22 @@
+@keyframes fade {
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.animateBlink {
+  animation: fade 0.25s ease 0s 2 normal none running;
+}
+
+.btnColor:enabled:active {
+  filter: brightness(0.85);
+}
+
+.warning {
+  color: rgb(175, 4, 4);
+  fill: rgb(175, 4, 4);
+}
+
+.close {
+  stroke: currentColor;
+}

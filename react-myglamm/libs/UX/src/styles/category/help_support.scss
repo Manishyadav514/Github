@@ -1,0 +1,183 @@
+.wrapper {
+  a {
+    background-color: transparent;
+    text-decoration: none;
+    color: #000;
+  }
+  ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  #tab1 {
+    ul {
+      margin-left: 2.4rem;
+      li {
+        font-size: 0.86rem;
+        line-height: 1.4rem;
+      }
+    }
+  }
+  .tab-pane {
+    ul {
+      margin-left: unset !important;
+    }
+  }
+  .row {
+    max-width: 767px;
+    width: 100%;
+    padding: unset;
+    background: unset;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .no-bullet {
+    list-style: none !important;
+  }
+  .no-padder {
+    padding: 0 !important;
+  }
+  .strong,
+  strong {
+    font-weight: 600 !important;
+  }
+
+  .banner {
+    background: url(https://files.myglamm.com/images/content/bg-policy.png) repeat #d4a204 !important;
+    width: 100%;
+    .inner-banner .heading {
+      font-size: 24px;
+      line-height: 28px;
+      margin-bottom: 12px;
+      margin-top: 20px;
+    }
+  }
+  .clear-both {
+    text-align: left;
+    background-color: #f3f3f3;
+  }
+  .policy-banner h1 {
+    font-size: 28px !important;
+    float: left;
+    width: 100%;
+    padding: 10px 0 !important;
+    text-align: center;
+    font-weight: 600;
+  }
+  h1 .heading {
+    color: #fff !important;
+    padding: 50px 0 48px !important;
+  }
+  .terms-banner h1 {
+    padding: 88px 0 !important;
+    border: 0 !important;
+  }
+  .mob-no-padder {
+    padding: 0 !important;
+  }
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+  .tandc-nav {
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.15);
+    float: left;
+    width: 100%;
+    transition: height 0.3s ease-out;
+    ul {
+      margin: 0;
+      li {
+        float: left;
+        margin-right: 20px;
+        a {
+          font-weight: 600;
+          padding: 20px 0;
+          float: left;
+        }
+      }
+    }
+  }
+  .tandc-content {
+    margin-top: 35px;
+    background: #f3f3f3;
+    padding: 10px 20px;
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+    h2,
+    h4 {
+      font-size: 20px;
+      padding: 20px 0;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    h5 {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 16px;
+      margin-bottom: 15px;
+      a {
+        color: #000;
+        font-weight: 600;
+      }
+    }
+    h2,
+    h4 {
+      margin: 0;
+      clear: both;
+      padding-top: 5px;
+    }
+  }
+  .customtabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+  }
+  .tab-content > .tab-pane {
+    display: none;
+  }
+  .tab-content > .active {
+    display: block;
+  }
+  .customtabcontent.active {
+    background: 0 0;
+  }
+  .customtab {
+    overflow: hidden;
+    ul {
+      background: #fff;
+      overflow-x: auto;
+      overflow-y: hidden;
+      display: -webkit-box;
+      display: -moz-box;
+      li {
+        float: none;
+        a {
+          background-color: inherit;
+          float: left;
+          border: none;
+          outline: 0;
+          cursor: pointer;
+          padding: 14px 0;
+          transition: 0.3s;
+          font-size: 14px;
+          border-bottom: 5px solid transparent;
+        }
+        a .active {
+          border-bottom: 5px solid #bf9b30;
+        }
+      }
+    }
+  }
+  .nav-tabs {
+    border-bottom: 1px solid #dee2e6;
+  }
+  .footer-container {
+    margin-top: unset;
+  }
+}

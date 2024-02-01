@@ -1,0 +1,258 @@
+.wrapper {
+  width: 100%;
+  display: block;
+  .fullwidth {
+    width: 100%;
+  }
+
+  .m-hide-for-mob {
+    display: none;
+  }
+
+  .m-show-for-mob {
+    display: block;
+  }
+
+  img {
+    vertical-align: middle;
+    border-style: none;
+    max-width: 100%;
+  }
+  .trendingPages-description {
+    padding: 0 20px;
+    background: #fff;
+    text-align: center;
+    p {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+  .row {
+    max-width: 25rem;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .text-center {
+    text-align: center !important;
+  }
+  .trendingPages-makeup {
+    padding: 20px 0;
+    background: #fff;
+    h2 {
+      margin-bottom: 20px;
+    }
+    p {
+      display: block;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+    }
+  }
+  figure {
+    margin: 0;
+  }
+  a {
+    background-color: transparent;
+    text-decoration: none;
+    color: #000;
+  }
+  .trendingPages-look {
+    padding: 20px 0;
+    background: #fff;
+    h2 {
+      margin-bottom: 23px;
+      margin-top: 0;
+    }
+    .pre-tryo-look {
+      margin: 0 0 30px;
+    }
+    .video-slider {
+      padding: 0;
+    }
+    figcaption {
+      font-size: 20px;
+      letter-spacing: 1px;
+      padding: 0 10px;
+      position: absolute;
+      color: #fff;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+      z-index: 1;
+      font-weight: 600;
+      top: auto;
+      transform: none;
+      text-transform: uppercase;
+    }
+  }
+  .sc-additional {
+    position: relative;
+    overflow: hidden;
+  }
+  .swiper-container {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    .swiper-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      /*display: -webkit-box;*/
+      /*display: -webkit-flex;*/
+      /*display: -ms-flexbox;*/
+      display: flex;
+      /*-webkit-transition-property: -webkit-transform;
+	    transition-property: -webkit-transform;
+	    -o-transition-property: transform;*/
+      transition-property: transform;
+      /*transition-property: transform,-webkit-transform;*/
+      /*-webkit-box-sizing: content-box;*/
+      box-sizing: content-box;
+
+      .swiper-container-android .swiper-slide,
+      .swiper-wrapper {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+      .swiper-slide {
+        -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        -webkit-transition-property: -webkit-transform;
+        -o-transition-property: transform;
+        transition-property: transform, -webkit-transform;
+        figure {
+          width: 100%;
+          background: #fff;
+          figcaption {
+            position: static;
+            left: 0;
+            top: 0;
+            transform: none;
+            padding: 20px 10px;
+            .product-name {
+              font-size: 18px;
+              display: block;
+              text-transform: uppercase;
+              font-weight: 300;
+              min-height: 50px;
+            }
+            .product-price {
+              display: block;
+              font-size: 18px;
+              font-weight: 600;
+            }
+          }
+          span {
+            display: block;
+            text-transform: uppercase;
+          }
+        }
+      }
+      .ss-additional {
+        flex-shrink: 0;
+      }
+    }
+    .swiper-button-next {
+      width: 40px !important;
+      position: absolute !important;
+      height: auto !important;
+      margin-top: -15px !important;
+      background: url(https://files.myglamm.com/site-images/original/arrow-left.png) center/20px no-repeat !important;
+      right: 5px !important;
+      padding: 10px;
+    }
+    .swiper-button-prev {
+      width: 40px !important;
+      height: auto !important;
+      margin-top: -15px !important;
+      background: url(https://files.myglamm.com/site-images/original/arrow-right.png) center/20px no-repeat !important;
+      left: 5px !important;
+      padding: 10px;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      position: absolute;
+      top: 50%;
+      width: 27px;
+      height: 44px;
+      margin-top: -22px;
+      z-index: 10;
+      cursor: pointer;
+      background-size: 27px 44px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      top: 0 !important;
+      bottom: 0 !important;
+    }
+    @media screen and (max-width: 767px) {
+      .swiper-button-next {
+        right: 0 !important;
+      }
+    }
+    .swiper-button-next.swiper-button-disabled,
+    .swiper-button-prev.swiper-button-disabled {
+      opacity: 0.35;
+      cursor: auto;
+      pointer-events: none;
+    }
+    @media screen and (max-width: 767px) {
+      .swiper-button-prev {
+        left: 0 !important;
+      }
+    }
+  }
+  .blog-category-template,
+  .blog-template {
+    display: none;
+    background: #fff;
+    margin-bottom: 8px;
+  }
+  .Theading-on {
+    font-size: 24px;
+    letter-spacing: 1.1px;
+    font-weight: 300;
+    width: 100%;
+    text-align: center;
+    span {
+      font-weight: 700;
+    }
+  }
+  .trendingPages-blog {
+    padding: 0 0 30px;
+    background: #fff;
+    .cory-form-sec {
+      background: #fff;
+      padding: 0 10px;
+    }
+    h2 {
+      font-weight: 600;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 26px;
+      margin: 40px 0 0;
+      width: 100%;
+      span {
+        font-weight: 400;
+      }
+    }
+    p {
+      text-align: center;
+      font-size: 14px;
+      padding: 0 20px;
+    }
+  }
+}

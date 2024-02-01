@@ -1,0 +1,226 @@
+/* COMMON STYLES */
+/* .wrapper {
+   float: left;
+   width: 100%;
+ }
+*/
+
+.hide-for-mob {
+  display: none;
+}
+
+.bg-white {
+  background-color: #fff !important;
+}
+
+.pull-left {
+  /*  float: left; */
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.swiper-container {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+
+.look-template-box {
+  float: left;
+  text-align: left;
+  width: 100%;
+  margin-right: 16px;
+  figure img {
+    width: 100%;
+  }
+}
+
+.pose-product-gallery .pose-pro-desc {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.pose-product-gallery .pose-pro-price {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.btn {
+  border-radius: 2px;
+  padding: 7px 15px;
+  text-align: center;
+  text-shadow: none;
+  vertical-align: middle;
+  font-size: 14px;
+  color: #fff;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  transition-property: color, background-color;
+  cursor: pointer;
+  -webkit-appearance: none;
+  display: inline-block;
+  font-weight: 400;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  line-height: 1.5;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+
+/* swiper */
+
+.swiper-container {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+
+.swiper-wrapper {
+  position: relative;
+  width: 15rem;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform, -webkit-transform;
+  box-sizing: content-box;
+}
+.swiper-slide {
+  flex-shrink: 0;
+  width: 375px;
+  height: 100%;
+  position: relative;
+  transition-property: transform, -webkit-transform;
+}
+
+/* POSE STYLES */
+.pose-video {
+  margin: 26px 0;
+  padding: 35px 10px;
+  background: #b5218f;
+  background: linear-gradient(45deg, #b5218f 0, #7a5eaa 47%, #7a5eaa 65%, #1475ba 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#b5218f", endColorstr="#1475ba", GradientType=1 );
+
+  .video-box {
+    display: table;
+    margin: 0;
+
+    .two-col {
+      float: left;
+      width: 100%;
+    }
+    .two {
+      width: 100%;
+      padding: 9px 15px 15px;
+      vertical-align: middle;
+      color: #fff;
+      text-align: left;
+
+      h5 {
+        font-size: 16px;
+        line-height: 18px;
+        margin: 0 0 9px;
+      }
+      p {
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
+  }
+}
+
+.pose-poduct {
+  h2 {
+    font-size: 16px;
+    text-align: left;
+    position: relative;
+    letter-spacing: 2.18px;
+    padding-bottom: 10px;
+    &::after {
+      content: "";
+      width: 262px;
+      height: 4px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: #b5218f;
+      background: linear-gradient(45deg, #b5218f 0, #7a5eaa 47%, #7a5eaa 65%, #1475ba 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#b5218f", endColorstr="#1475ba", GradientType=1 );
+    }
+  }
+}
+
+.pose-category {
+  figure {
+    width: 100%;
+    padding-top: 40px;
+    position: relative;
+    .category-name {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: #b5218f;
+      background: linear-gradient(45deg, #b5218f 0, #7a5eaa 47%, #7a5eaa 65%, #1475ba 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#b5218f", endColorstr="#1475ba", GradientType=1 );
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 21px;
+      width: 189px;
+      letter-spacing: 2px;
+      padding: 10px;
+      text-align: center;
+    }
+  }
+}
+
+.pose-blog {
+  figure {
+    width: 100%;
+    padding-top: 40px;
+
+    figcaption {
+      background: rgba(216, 216, 216, 0.3);
+      padding: 18px 13px 8px;
+      h3 {
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 2.18px;
+        margin-bottom: 9px;
+      }
+    }
+  }
+  .btn {
+    background: #b5218f;
+    background: linear-gradient(45deg, #b5218f 0, #7a5eaa 47%, #7a5eaa 65%, #1475ba 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#b5218f", endColorstr="#1475ba", GradientType=1 );
+    color: #fff;
+    padding: 10px 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin: 40px 0 48px;
+  }
+}

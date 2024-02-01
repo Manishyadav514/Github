@@ -1,0 +1,29 @@
+.backdropStyle {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.bottom-modal {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.center-modal {
+  position: absolute;
+  left: auto;
+  right: auto;
+  margin: auto;
+  bottom: auto;
+}
+
+.right-modal {
+  position: absolute;
+  top: auto;
+  bottom: auto;
+}

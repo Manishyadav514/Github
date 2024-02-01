@@ -1,0 +1,56 @@
+.level-1-details > summary:after {
+  line-height: 1;
+  content: "";
+  height: 10px;
+  width: 10px;
+  border-bottom: 1px solid currentcolor;
+  border-right: 1px solid currentcolor;
+  transition: all 0.3s ease 0s;
+  transform: rotate(45deg);
+  transform-origin: center center;
+  position: absolute;
+  right: 20px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+.level-2-details > summary:after {
+  line-height: 1;
+  content: "";
+  height: 8px;
+  width: 8px;
+  border-bottom: 1px solid currentcolor;
+  border-right: 1px solid currentcolor;
+  transition: all 0.3s ease 0s;
+  transform: rotate(45deg);
+  transform-origin: center center;
+  position: absolute;
+  right: 20px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+.levels[open] > summary:after {
+  content: "";
+  transform: rotate(-135deg);
+}
+
+/* styling for footer */
+.webStyle h2 {
+  font-size: 16pt;
+  margin: 25px 0px 5px 0px;
+}
+.webStyle h1 {
+  font-size: 18pt;
+}
+.webStyle h3 {
+  font-size: 12pt;
+  margin: 15px 0px 5px 0px;
+}
+.webStyle p {
+  font-size: 12pt;
+  font-weight: 400;
+  margin: 5px 0px 5px 0px;
+}

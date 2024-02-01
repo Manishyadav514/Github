@@ -1,0 +1,14 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  x="0px"
+  y="0px"
+  height="30px"
+  width="30px"
+  viewBox="-250 -100 1000 1000"
+>
+  <path
+    transform="scale(1,-1) translate(0, -650)"
+    fill="black"
+    d="M163 500l-58-57 187-187-187-187 58-57 244 244z"
+  />
+</svg>

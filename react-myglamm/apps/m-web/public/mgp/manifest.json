@@ -1,0 +1,56 @@
+{
+  "name": "MyGlamm - International Makeup Products",
+  "short_name": "MyGlamm",
+  "description": "Buy Makeup kit & Cosmetics Products from international makeup brand MyGlamm, official online beauty store in India. Shop Manish Malhotra Makeup and our wide range of Makeup products and kits for face, lips, eyes & nails.",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "orientation": "portrait",
+  "background_color": "#fee8e8",
+  "theme_color": "#ff9797",
+  "dir": "ltr",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/mgp/manifest_icons/icon-72x72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "/mgp/manifest_icons/icon-96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/mgp/manifest_icons/icon-128x128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/mgp/manifest_icons/icon-144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "/mgp/manifest_icons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/mgp/manifest_icons/icon-384x384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "/mgp/manifest_icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/mgp/manifest_icons/mgp_maskable_icon.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    }
+  ]
+}

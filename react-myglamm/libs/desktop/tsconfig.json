@@ -1,0 +1,45 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "ES2015",
+    "module": "esnext",
+    "allowJs": false,
+    "jsx": "preserve",
+    "noEmit": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["dom", "dom.iterable", "esnext", "WebWorker"],
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "paths": {
+      "@libComponents/*": ["../UX/src/Components/*"],
+      "@libConstants/*": ["../UX/src/Constants/*"],
+      "@libAnalytics/*": ["../UX/src/Analytics/*"],
+      "@libPages/*": ["../UX/src/pages/*"],
+      "@libHooks/*": ["../UX/src/hooks/*"],
+      "@libAPI/*": ["../UX/src/lib/*"],
+      "@libStateMachines/*": ["../UX/src/StateMachines/*"],
+      "@libStore/*": ["../UX/src/store/*"],
+      "@libStyles/*": ["../UX/src/styles/*"],
+      "@libUtils/*": ["../UX/src/utils/*"],
+      "@libServices/*": ["../UX/src/services/*"],
+      "@typesLib/*": ["../@types/*"],
+      "@checkoutLib/*": ["../checkout/src/*"],
+      "@PLPLib/*": ["../PLP/src/*"],
+      "@productLib/*": ["../product/src/*"],
+      "@components/*": ["../../apps/web/mgp/src/Components/*"]
+    }
+  },
+  "exclude": [],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/**/*.ts",
+    "src/**/**/*.tsx",
+    "../UX/src/Components/BlogsWP/Schema/BlogSchema.tsx"
+  ]
+}

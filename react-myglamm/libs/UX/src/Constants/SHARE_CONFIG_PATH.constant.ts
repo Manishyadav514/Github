@@ -1,0 +1,15 @@
+export const sharePaths = [
+  { key: "/product", name: "product" },
+  { key: "/collection", name: "collection" },
+  { key: "/glammstudio", name: "blog" },
+  { key: "/looks", name: "look" },
+  { key: "/myglammxo", name: "myglammxo-landing" },
+  { key: "/myglammxo-survey", name: "myglammxo-survey" },
+  { key: "/myglammxo-rewards", name: "gamification" },
+  { key: "/my-rewards", name: "gamification" },
+  { key: "/order-summary", name: "gamification" },
+  { key: "/track-myrewards", name: "gamification" },
+  { key: "/myglammxo-survey-thankyou", name: "survey-thankyou" },
+  { key: "/community", name: "community" },
+  { key: "/bigg-boss", name: "biggBoss" },
+];

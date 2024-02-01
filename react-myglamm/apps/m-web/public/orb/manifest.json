@@ -1,0 +1,41 @@
+{
+  "name": "Oriental Botanics: Buy Hair & Skincare Products Online @Best Price In India",
+  "short_name": "Oriental Botanics",
+  "description": "Buy hair & skincare products online at best price in India on Oriental Botanics. Shop from affordable range of hair, skin & body care products for ideal self care routine with the goodness of modern Ayurveda.",
+  "theme_color": "#222e62",
+  "background_color": "#c4d5e5",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "dir": "ltr",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/orb/manifest_icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/orb/manifest_icons/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/orb/manifest_icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/orb/manifest_icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/orb/manifest_icons/orb_maskable_icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

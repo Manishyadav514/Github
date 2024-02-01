@@ -1,0 +1,302 @@
+.m-hide-for-mob {
+  display: none !important;
+}
+.pos-rel {
+  position: relative;
+}
+.fullwidth {
+  width: 100%;
+}
+.mob-no-padder {
+  padding: 0 !important;
+}
+.row {
+  max-width: 767px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: #000;
+}
+figure {
+  margin: 0;
+}
+.text-center {
+  text-align: center !important;
+}
+img {
+  vertical-align: middle;
+  border-style: none;
+  max-width: 100%;
+}
+.mob-white-box {
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.34);
+}
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.no-bullet {
+  list-style: none !important;
+}
+.no-padder {
+  padding: 0 !important;
+}
+.hide {
+  display: none !important;
+}
+.refer-friend-sec {
+  background: url(https://files.myglamm.com/static/refer-earn/Background+-+Referral.jpg) 0 0/100% no-repeat;
+  padding: 80px 16px 16px;
+  width: 100%;
+}
+.is_login-referrel {
+  padding: 8px;
+  background: #f6f6f6;
+  width: 100%;
+  position: relative;
+}
+.referral-congo-text {
+  background: #ffeff2;
+  padding: 6px 16px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.referral-howitwork {
+  background: #f6f6f6;
+  padding: 0 8px 8px;
+  width: 100%;
+}
+.btn {
+  border-radius: 2px;
+  padding: 7px 15px;
+  text-align: center;
+  text-shadow: none;
+  vertical-align: middle;
+  font-size: 14px;
+  color: #fff;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  transition-property: color, background-color;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+.btn-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+.btn.btn-secondary {
+  background: #000;
+  color: #bf9b30;
+  border: 1px solid #000;
+}
+#accordion h4 {
+  font-size: 14px;
+  color: #000;
+  font-weight: 600;
+}
+.faq-panel {
+  width: 100%;
+  text-align: left;
+  padding: 30px 0;
+  border-bottom: 1px solid #000;
+  .panel-heading {
+    padding: 5px 0;
+  }
+  .panel-title {
+    font-size: 24px;
+    a {
+      display: block;
+      color: #000;
+      position: relative;
+      padding-right: 24px;
+      .ico {
+        float: right;
+        color: #000;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .ico.plus {
+        display: none;
+      }
+      .ico.minus {
+        display: block;
+      }
+    }
+    a.collapsed .ico.plus {
+      display: block;
+    }
+    a.collapsed .ico.minus {
+      display: none;
+    }
+    a.collapsed {
+      color: #000;
+    }
+  }
+}
+.referral-wevaluefrdship {
+  width: 100%;
+  padding-bottom: 32px;
+  margin-top: 17px;
+  text-align: center;
+}
+
+.referral-wevaluefrdship-box {
+  background: #f6f6f6;
+  padding: 8px;
+  width: 100%;
+  .referral-share-sec {
+    display: none;
+  }
+  .mob-white-box {
+    position: relative;
+  }
+  img {
+    padding: 34px 24px 0;
+  }
+  .sub-text {
+    font-size: 20px;
+  }
+  .referral-get-referralCode {
+    width: 100%;
+    margin-top: 11px;
+    .btn {
+      width: 262px;
+      border-radius: 0;
+      font-size: 13px;
+      padding: 17px 21px 15px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+  }
+}
+.referral-howitwork {
+  background: #f6f6f6;
+  padding: 0 8px 8px;
+  width: 100%;
+  .mob-white-box {
+    padding: 20px 20px 32px;
+  }
+  h2 {
+    font-size: 18px !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 0;
+    width: 100%;
+  }
+  ul {
+    margin: auto;
+    padding-left: 0;
+    li {
+      width: 100%;
+      padding: 21px 0;
+      margin: 0;
+      position: relative;
+      img {
+        margin: auto;
+        max-height: 48px;
+        margin-bottom: 9px;
+      }
+      figcaption {
+        font-size: 18px;
+        line-height: 22px;
+        width: 100%;
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        width: 151px;
+        height: 1px;
+        background: #000;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+    }
+    li:last-child:after {
+      background: 0 0;
+    }
+  }
+  .btn {
+    width: 262px;
+    border-radius: 0;
+    font-size: 13px;
+    padding: 17px 21px 15px;
+    color: #fff !important;
+    text-transform: uppercase;
+    margin: 0 auto;
+  }
+}
+.is_login-referrel {
+  display: none;
+  .referral-howitwork,
+  .referral-wevaluefrdship-box {
+    background: 0 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .mob-white-box {
+    width: 100%;
+    position: relative;
+  }
+  .referral-frd-with-benefits {
+    background: 0 0;
+    width: 100%;
+    padding: 12px;
+    h2 {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    ul {
+      text-align: center;
+      padding: 0;
+      li {
+        display: inline-block;
+        width: 32.3333%;
+        text-align: center;
+        margin-top: 17px;
+      }
+    }
+  }
+}
+.refer-friend-sec {
+  .referral-howitwork {
+    background: 0 0;
+    padding: 20px 10px;
+  }
+  .how-it-works-thumb {
+    margin: 10px 0 0;
+    width: 100%;
+  }
+  .how-it-works {
+    font-size: 14px !important;
+  }
+  .referral-h2 {
+    font-size: 22px;
+    letter-spacing: normal;
+    text-align: center;
+    margin: 0;
+  }
+  .ref-dashboard {
+    padding: 20px 16px 16px;
+    width: 100%;
+    .ref-dashboard {
+      padding: 20px 16px 16px;
+      width: 100%;
+    }
+  }
+}

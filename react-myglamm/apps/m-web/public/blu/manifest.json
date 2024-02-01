@@ -1,0 +1,36 @@
+{
+  "name": "Bleu",
+  "short_name": "Bleu",
+  "description": "Buy period care and feminine hygiene products online in India at best price. Shop wide range of personal hygiene products for females - menstrual cup, sanitary pads, tampons, intimate wash, razors and more, only at Sirona.",
+  "theme_color": "#3D76C9",
+  "background_color": "#EDF6FA",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "dir": "ltr",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/blu/manifest_icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/blu/manifest_icons/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/blu/manifest_icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/blu/manifest_icons/blu_maskable_icon.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    }
+  ]
+}

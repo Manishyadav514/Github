@@ -1,0 +1,36 @@
+{
+  "name": "Organic Harvest",
+  "short_name": "Organic Harvest",
+  "description": "Buy 100 % certified organic skin care and hair care products for every skin and hair type and concern online. Shop from wide range of organic personal care product at Organic Harvest",
+  "theme_color": "#3D76C9",
+  "background_color": "#EDF6FA",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "dir": "ltr",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/orh/manifest_icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/orh/manifest_icons/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/orh/manifest_icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/orh/manifest_icons/orh_maskable_icon.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    }
+  ]
+}

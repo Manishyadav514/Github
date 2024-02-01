@@ -1,0 +1,41 @@
+{
+  "name": "India's Largest Digital Community of Women | POPxo",
+  "short_name": "popxo",
+  "description": "POPxo is India's largest community of women online. Log on to get fashion updates, latest beauty trends, Bollywood gossip and more. You can read, watch, hangout and shop on the website and the app. What's more? POPxo is now available in six languages: English, हिन्दी, தமிழ், తెలుగు, मराठी, বাংলা. Download the app and take it up a pop!",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "orientation": "portrait",
+  "background_color": "#fee8e8",
+  "theme_color": "#ff9797",
+  "dir": "ltr",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/popxo/manifest_icons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/popxo/manifest_icons/icon-256x256.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/popxo/manifest_icons/icon-384x384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "/popxo/manifest_icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/popxo/manifest_icons/popxo_maskable_icon.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    }
+  ]
+}

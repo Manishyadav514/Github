@@ -1,0 +1,11 @@
+.addressFormWrapper {
+  background-color: #fff;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.19);
+
+  padding: 1rem 1rem 0.1rem;
+
+  .pincode-city-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "The Moms Co",
+  "short_name": "The Moms Co",
+  "description": "Explore the mom and baby care products for skin, body and hair with The Moms Co. All our products are Australia certified, natural and safe for both newborn babies and pregnant moms.",
+  "theme_color": "#3D76C9",
+  "background_color": "#EDF6FA",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "dir": "ltr",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/tmc/manifest_icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/tmc/manifest_icons/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/tmc/manifest_icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/tmc/manifest_icons/tmc_maskable_icon.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    }
+  ]
+}

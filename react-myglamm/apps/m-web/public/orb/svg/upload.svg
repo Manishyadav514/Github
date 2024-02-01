@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" viewBox="0 0 12 12">
+    <defs>
+        <path id="qmb2tuhtta" d="M11.25 10.5c.415 0 .75.336.75.75s-.335.75-.75.75H.75c-.415 0-.75-.336-.75-.75s.335-.75.75-.75zM6.53.22l2.25 2.25c.293.293.293.767 0 1.06-.293.294-.767.294-1.06 0l-.97-.97v5.69c0 .414-.335.75-.75.75s-.75-.336-.75-.75V2.56l-.97.97c-.146.147-.338.22-.53.22s-.384-.073-.53-.22c-.294-.293-.294-.767 0-1.06L5.47.22c.293-.293.767-.293 1.06 0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g transform="translate(-35 -1084) translate(0 684) translate(20 387) translate(15 13)">
+                        <use fill="#222e62" xlink:href="#qmb2tuhtta"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

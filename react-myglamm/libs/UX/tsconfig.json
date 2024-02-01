@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "ES2015",
+    "module": "esnext",
+    "allowJs": false,
+    "jsx": "preserve",
+    "noEmit": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["dom", "dom.iterable", "esnext", "WebWorker"],
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "paths": {
+      "@libComponents/*": ["src/Components/*"],
+      "@libConstants/*": ["src/Constants/*"],
+      "@libAnalytics/*": ["src/Analytics/*"],
+      "@libPages/*": ["src/pages/*"],
+      "@libHooks/*": ["src/hooks/*"],
+      "@libAPI/*": ["src/lib/*"],
+      "@libStore/*": ["src/store/*"],
+      "@libStyles/*": ["src/styles/*"],
+      "@libUtils/*": ["src/utils/*"],
+      "@libServices/*": ["src/services/*"],
+      "@libLayouts/*": ["src/Layouts/*"],
+      "@typesLib/*": ["../@types/*"],
+      "@checkoutLib/*": ["../checkout/src/*"],
+      "@productLib/*": ["../product/src/*"],
+      "@PLPLib/*": ["../PLP/src/*"],
+      "@libDesktop/*": ["../desktop/src/*"],
+      "@layout/*": ["../../apps/m-web/src/Layouts/*"],
+      "@components/*": ["../../apps/m-web/src/Components/*"]
+    }
+  },
+  "exclude": [],
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
+}

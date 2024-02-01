@@ -1,0 +1,74 @@
+{
+  "m-web": {
+    "ALPHA": {
+      "mgp": "780f3e196e082a87a8ccb6f859299f71",
+      "bbc": "70fc50ea04d18da8d5a6468da3da9220",
+      "stb": "872f5b25d870a8f5a6cc4bba451eacad",
+      "srn": "93884a7e55548599dd71e5eaf9777f09",
+      "tmc": "f2fe10c10de90103bea525eecbf8bb72",
+      "orh": "03b465bc3d9e87551f1a81b1c35d05aa",
+      "srn-are": "a2e7f8b148b35756b405ddc376a6d8a5",
+      "srn-sau": "9399090be2428b675230717a12f07457",
+      "tmc-are": "cfcef1e1df5901708e9e1de0e69c63a6",
+      "tmc-sau": "959406de4e0f69cacbdfe7661f799a8d",
+      "mgp-are": "add56ddf920e85082eaafa7682ab4ad1",
+      "mgp-sau": "02951fc3bd0db0ed05552adbebb2e5f6",
+      "orh-are": "a10c985187df1886e0b2b90d8bc90568",
+      "orh-sau": "a02486defe937feb9f4e5be3b758530b"
+    },
+    "PROD": {
+      "mgp": "cbd186249dc1504f530f1b809cc98fe3",
+      "bbc": "6d1060a1ac3cd9f6329725f8783ab0bd",
+      "stb": "fac4848b1213fdf46764b9fd6f325b5f",
+      "srn": "7f6ced1f4265ebfd4ca89a9d8a3b8bb5",
+      "tmc": "ab0667a5342cbb257fb7998b8a2748b6",
+      "orh": "9235d6e891f2ddd92e5649e0ee61b8e6",
+      "srn-are": "7aba620f1aeb78d5bb2b9f75d7e31e12",
+      "srn-sau": "c64d23ea10d93b6415fff5db5036695e",
+      "tmc-are": "93b30e952697f05fd8f4931ca78b6bd4",
+      "tmc-sau": "021cc2b98c9765f7085f206cf63ab43f",
+      "orh-are": "f5a737685ac1fc22d15c3dec7a92ec9a",
+      "orh-sau": "4697b7c700422664674dea615d9bfd9f"
+    }
+  },
+  "rwd": {
+    "ALPHA": {
+      "mgp": "780f3e196e082a87a8ccb6f859299f71"
+    },
+    "PROD": {
+      "mgp": "cbd186249dc1504f530f1b809cc98fe3"
+    }
+  },
+  "web": {
+    "ALPHA": {
+      "mgp": "e5aef4c4f4232a8858ff629cb39dd9a0",
+      "bbc": "70fc50ea04d18da8d5a6468da3da9220",
+      "stb": "319394cf7f3c07dbe9a2c17fe1aab0d5",
+      "srn": "36a82f252d5c3b336b377272346c9f37",
+      "tmc": "6fe344175a0142b24c029323d21d1a97",
+      "orh": "b3d0db5e9ffdc78e7aa1eac52745cdeb",
+      "srn-are": "6bcade1a0441f6441ebcb4ad592b693b",
+      "srn-sau": "13bba97467292238e361d467d278a957",
+      "tmc-are": "6bcade1a0441f6441ebcb4ad592b693b",
+      "tmc-sau": "13bba97467292238e361d467d278a957",
+      "mgp-are": "11d63df58d07a196abcbf1b451ca6794",
+      "mgp-sau": "4982533106990cd29d1f301755e1a5a7",
+      "orh-are": "004004aa2a7585e71d814f6099afabca",
+      "orh-sau": "0fa031d27a20a950e125efe6c9bc8913"
+    },
+    "PROD": {
+      "mgp": "a8523ea622b9e0ec9bde6b81a033f8fb",
+      "bbc": "9887d6cd4131d5d1cb04df463334b425",
+      "stb": "6783940b92d0e444061072907ff094a8",
+      "srn": "88229417664f9b71ad42c9bad83ad118",
+      "tmc": "4b47c4d455ab989c71464395cc74c23a",
+      "orh": "666c8cff1220fbe7bad0b86455e98cff",
+      "srn-are": "70d754f2eb1813de8e5f69ceceb65589",
+      "srn-sau": "4d77b20203d05c223d0113e6d701cd64",
+      "tmc-are": "670db51742115c1f4096de4755469113",
+      "tmc-sau": "e1645004b3304c6df01321b3a7a1002b",
+      "orh-are": "a157739af251b62f47b6bd73fb9c1a6b",
+      "orh-sau": "b13aec9612b9c3844adea841dee427fd"
+    }
+  }
+}

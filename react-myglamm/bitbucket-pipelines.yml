@@ -1,0 +1,1561 @@
+#Bitbucket-Pipeline-the-good-web-monorepo
+image:
+  name: 616035352558.dkr.ecr.ap-south-1.amazonaws.com/the-good-web-monorepo:latest1
+  aws:
+    access-key: $AWS_ACCESS_KEY_ID
+    secret-key: $AWS_SECRET_ACCESS_KEY
+
+clone:
+  depth: full
+
+definitions:
+  caches:
+    sonar: ~/.sonar/cache
+    pnpm: $BITBUCKET_CLONE_DIR/.pnpm-store
+    nextcache-g3: build/g3/.next/cache
+    nextcache-m-web: build/m-web/.next/cache
+    nextcache-web: build/web/.next/cache
+
+  steps:
+    - step: &sonarcloud
+        name: Build & Test project against sonarcloud
+        size: 2x
+        caches:
+          - sonar
+        script:
+          - npm install
+          - pipe: sonarsource/sonarcloud-scan:1.4.0
+            #- pipe: sonarsource/sonarcloud-quality-gate:0.1.6
+            variables:
+            SONAR_TOKEN: ${SONAR_TOKEN}
+
+    #############################################Mobile Alpha IN##############################
+
+    - step: &in-deployment-step
+        image:
+          name: 616035352558.dkr.ecr.ap-south-1.amazonaws.com/aws-alpine:latest
+          aws:
+            access-key: $AWS_ACCESS_KEY_ID
+            secret-key: $AWS_SECRET_ACCESS_KEY
+        services:
+          - docker
+
+        script:
+          #CONFIG
+          - printf "$pipes" > pipes.sh
+          - chmod 755 pipes.sh
+          - ./pipes.sh
+
+    #############################################Desktop Alpha IN##############################
+
+    - step: &web-in-deployment-step
+        image:
+          name: 616035352558.dkr.ecr.ap-south-1.amazonaws.com/aws-alpine:latest
+          aws:
+            access-key: $AWS_ACCESS_KEY_ID
+            secret-key: $AWS_SECRET_ACCESS_KEY
+        services:
+          - docker
+
+        script:
+          #CONFIG
+          - printf "$pipes" > pipes.sh
+          - chmod 755 pipes.sh
+          - ./pipes.sh
+
+    #############################################Mobile Alpha ME##############################
+
+    - step: &me-deployment-step
+        image:
+          name: 616035352558.dkr.ecr.ap-south-1.amazonaws.com/aws-alpine:azure
+          aws:
+            access-key: $AWS_ACCESS_KEY_ID
+            secret-key: $AWS_SECRET_ACCESS_KEY
+        services:
+          - docker
+
+        script:
+          #CONFIG
+          - printf "$pipes" > pipes.sh
+          - chmod 755 pipes.sh
+          - ./pipes.sh
+
+    #############################################Desktop Alpha ME##############################
+
+    - step: &web-me-deployment-step
+        image:
+          name: 616035352558.dkr.ecr.ap-south-1.amazonaws.com/aws-alpine:azure
+          aws:
+            access-key: $AWS_ACCESS_KEY_ID
+            secret-key: $AWS_SECRET_ACCESS_KEY
+        services:
+          - docker
+
+        script:
+          #CONFIG
+          - printf "$pipes" > pipes.sh
+          - chmod 755 pipes.sh
+          - ./pipes.sh
+
+pipelines:
+  default:
+    - step:
+        script:
+          - echo "This script runs on all branches that don't have any specific pipeline assigned in 'branches'."
+
+      #- step: *sonarcloud
+
+  branches:
+    trivy:
+      - step:
+          services:
+            - docker
+          caches:
+            - pnpm
+
+          name: trivy run
+          image:
+            name: 616035352558.dkr.ecr.ap-south-1.amazonaws.com/trivy:html
+            aws:
+              access-key: $AWS_ACCESS_KEY_ID
+              secret-key: $AWS_SECRET_ACCESS_KEY
+          script:
+            - echo -e $trivy_scan_NoConfig > trivy_scan.sh
+            - bash trivy_scan.sh "the-good-web-monorepo"
+    staging:
+      - parallel:
+          - step:
+              <<: *in-deployment-step
+              deployment: MWebStagingIN
+              name: Deploy to M-Web Staging
+              caches:
+                - pnpm
+                - nextcache-m-web
+
+          - step:
+              <<: *web-in-deployment-step
+              deployment: WebStagingIN
+              name: Deploy to Web Staging
+              caches:
+                - pnpm
+                - nextcache-web
+    alpha:
+      - parallel:
+          - step:
+              <<: *in-deployment-step
+              deployment: MWebAlphaIN
+              name: Deploy to M-Web AlphaIN
+              caches:
+                - pnpm
+                - nextcache-m-web
+
+          - step:
+              <<: *web-in-deployment-step
+              deployment: WebAlphaIN
+              name: Deploy to Web AlphaIN
+              caches:
+                - pnpm
+                - nextcache-web
+
+      ###############################################################Alpha ME ###########################
+          - step:
+              <<: *me-deployment-step
+              deployment: MWebAlphaME
+              name: Deploy to M-Web AlphaME
+              caches:
+                - pnpm
+                - nextcache-m-web
+
+
+          - step:
+              <<: *web-me-deployment-step
+              deployment: WebAlphaME
+              name: Deploy to Web AlphaME
+              caches:
+                - pnpm
+                - nextcache-web
+      - parallel:
+          - step:
+              runs-on:
+                - self.hosted
+                - linux
+              name: CD Alpha Mweb ME
+              image:
+                name: 616035352558.dkr.ecr.ap-south-1.amazonaws.com/aws-alpine:latest
+                aws:
+                  access-key: $AWS_ACCESS_KEY_ID
+                  secret-key: $AWS_SECRET_ACCESS_KEY
+              services:
+                - docker
+              caches:
+                - pnpm
+                - nextcache-web
+              script:
+                - printf "$Deploy_MWeb" > Deploy_MWeb.sh
+                - chmod 755 Deploy_MWeb.sh
+                - ./Deploy_MWeb.sh
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $AZURE_APP_ID
+                    AZURE_PASSWORD: $AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-staging-me
+                    AZURE_RESOURCE_GROUP: G3-Staging-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: mgp_mweb_me_task.yaml
+                    DEBUG: "true"
+
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $AZURE_APP_ID
+                    AZURE_PASSWORD: $AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-staging-me
+                    AZURE_RESOURCE_GROUP: G3-Staging-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: orh_mweb_me_task.yaml
+                    DEBUG: "true"
+
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $AZURE_APP_ID
+                    AZURE_PASSWORD: $AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-staging-me
+                    AZURE_RESOURCE_GROUP: G3-Staging-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: srn_mweb_me_task.yaml
+                    DEBUG: "true"
+
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $AZURE_APP_ID
+                    AZURE_PASSWORD: $AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-staging-me
+                    AZURE_RESOURCE_GROUP: G3-Staging-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: tmc_mweb_me_task.yaml
+                    DEBUG: "true"
+
+          - step:
+              runs-on:
+                - self.hosted
+                - linux
+              name: CD Alpha Web ME
+              image:
+                name: 616035352558.dkr.ecr.ap-south-1.amazonaws.com/aws-alpine:latest
+                aws:
+                  access-key: $AWS_ACCESS_KEY_ID
+                  secret-key: $AWS_SECRET_ACCESS_KEY
+              services:
+                - docker
+              caches:
+                - pnpm
+                - nextcache-web
+              script:
+                - printf "$Deploy_Web" > Deploy_Web.sh
+                - chmod 755 Deploy_Web.sh
+                - ./Deploy_Web.sh
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $AZURE_APP_ID
+                    AZURE_PASSWORD: $AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-staging-me
+                    AZURE_RESOURCE_GROUP: G3-Staging-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: mgp_web_me_task.yaml
+                    DEBUG: "true"
+
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $AZURE_APP_ID
+                    AZURE_PASSWORD: $AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-staging-me
+                    AZURE_RESOURCE_GROUP: G3-Staging-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: orh_web_me_task.yaml
+                    DEBUG: "true"
+
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $AZURE_APP_ID
+                    AZURE_PASSWORD: $AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-staging-me
+                    AZURE_RESOURCE_GROUP: G3-Staging-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: srn_web_me_task.yaml
+                    DEBUG: "true"
+
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $AZURE_APP_ID
+                    AZURE_PASSWORD: $AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-staging-me
+                    AZURE_RESOURCE_GROUP: G3-Staging-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: tmc_web_me_task.yaml
+                    DEBUG: "true"     
+
+    ############################################################### Preprod ###########################
+    preprod:
+      - parallel:
+          - step:
+              name: Deploy to M-Web PreprodIN
+              deployment: MWebPreprodIN
+              image:
+                name: 616035352558.dkr.ecr.ap-south-1.amazonaws.com/aws-alpine:latest
+                aws:
+                  access-key: $AWS_ACCESS_KEY_ID
+                  secret-key: $AWS_SECRET_ACCESS_KEY
+              services:
+                - docker
+
+              caches:
+                - pnpm
+                - nextcache-m-web
+
+              script:
+                #CONFIG
+                - printf "$pipes" > pipes.sh
+                - chmod 755 pipes.sh
+                - ./pipes.sh
+                ###############################################MGP IN###############################################
+
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "mgp_mweb_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_MGP_SERVICE_NAME)
+                    TASK_DEFINITION: "mgp_mweb_in_task.json"
+
+                ###############################################BLUE IN###############################################
+
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "blue_mweb_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_BLUE_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "blue_mweb_in_task.json"
+
+
+                ###############################################LIT IN###############################################
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "lit_mweb_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_LIT_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "lit_mweb_in_task.json"
+
+
+                ###############################################POPXO IN###############################################
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "popxo_mweb_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_POPXO_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "popxo_mweb_in_task.json"
+                ###############################################BBC IN###############################################
+
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "bbc_mweb_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_BABYCHAKRA_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "bbc_mweb_in_task.json"
+                ###############################################STB IN###############################################
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "stb_mweb_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_STBOTANICA_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "stb_mweb_in_task.json"
+
+                ###############################################ORH IN###############################################
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "orh_mweb_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_ORGANICHARVEST_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "orh_mweb_in_task.json"
+                ###############################################SRN IN###############################################
+
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "srn_mweb_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_THESIRONA_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "srn_mweb_in_task.json"
+
+                ###############################################TMC IN###############################################
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "tmc_mweb_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_THEMOMSCO_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "tmc_mweb_in_task.json"
+                ###############################################TWK IN ###############################################
+
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "twk_mweb_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_TWEAKINDIA_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "twk_mweb_in_task.json"
+
+          ###############################################ORB IN ###############################################
+
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "orb_mweb_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_ORB_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "orb_mweb_in_task.json"
+
+          ###############################################MNM IN ###############################################
+
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "mnm_mweb_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_MNM_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "mnm_mweb_in_task.json"
+
+          ###############################################Desktop IN###############################################
+          - step:
+              name: Deploy to Web PreprodIN
+              deployment: WebPreprodIN
+              image:
+                name: 616035352558.dkr.ecr.ap-south-1.amazonaws.com/aws-alpine:latest
+                aws:
+                  access-key: $AWS_ACCESS_KEY_ID
+                  secret-key: $AWS_SECRET_ACCESS_KEY
+              services:
+                - docker
+
+              caches:
+                - pnpm
+                - nextcache-web
+
+              script:
+                #CONFIG
+                - printf "$pipes" > pipes.sh
+                - chmod 755 pipes.sh
+                - ./pipes.sh
+                ###############################################MGP IN###############################################
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "mgp_web_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_MGP_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "mgp_web_in_task.json"
+
+                ###############################################BLUE IN###############################################
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "blue_web_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_BLUE_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "blue_web_in_task.json"
+
+                ###############################################LIT IN###############################################
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "lit_web_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_LIT_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "lit_web_in_task.json"                                        
+                ###############################################POPXO IN###############################################
+
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "popxo_web_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_POPXO_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "popxo_web_in_task.json"
+                ###############################################BBC IN###############################################
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "bbc_web_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_BBC_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "bbc_web_in_task.json"
+                ###############################################STB IN###############################################
+
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "stb_web_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_STB_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "stb_web_in_task.json"
+                ###############################################ORH IN###############################################
+
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "orh_web_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_ORH_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "orh_web_in_task.json"
+                ###############################################SRN IN###############################################
+
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "srn_web_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_SRN_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "srn_web_in_task.json"
+                ###############################################TMC IN###############################################
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "tmc_web_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_TMC_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "tmc_web_in_task.json"
+                ###############################################TWK IN###############################################
+
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "twk_web_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_TWK_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "twk_web_in_task.json"
+
+      ###############################################ORB IN###############################################
+
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "orb_web_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_ORB_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "orb_web_in_task.json"
+
+      ###############################################MNM IN###############################################
+
+                #ECR & EKS
+                - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+                  variables:
+                    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                    AWS_DEFAULT_REGION: "ap-southeast-1"
+                    CLUSTER_NAME: "preprod-eks-cluster"
+                    KUBECTL_COMMAND: "apply"
+                    RESOURCE_PATH: "mnm_web_in_task.yaml"
+                    DEBUG: "true"
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $PRE_PROD_AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $PRE_PROD_CLUSTER_NAME
+                    SERVICE_NAME: $( cat PRE_PROD_MNM_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "mnm_web_in_task.json"
+
+      ###############################################Mobile ME###############################################
+   
+          - step:
+              name: Deploy to M-Web PreprodME
+              deployment: MWebPreprodME
+              image:
+                name: 616035352558.dkr.ecr.ap-south-1.amazonaws.com/aws-alpine:azure
+                aws:
+                  access-key: $AWS_ACCESS_KEY_ID
+                  secret-key: $AWS_SECRET_ACCESS_KEY
+              services:
+                - docker
+
+              caches:
+                - pnpm
+                - nextcache-m-web
+
+              script:
+                #CONFIG
+                - printf "$pipes" > pipes.sh
+                - chmod 755 pipes.sh
+                - ./pipes.sh
+
+                
+          ###############################################Desktop ME###############################################
+
+          - step:
+              name: Deploy to Web PreprodME
+              deployment: WebPreprodME
+              image:
+                name: 616035352558.dkr.ecr.ap-south-1.amazonaws.com/aws-alpine:azure
+                aws:
+                  access-key: $AWS_ACCESS_KEY_ID
+                  secret-key: $AWS_SECRET_ACCESS_KEY
+              services:
+                - docker
+
+              caches:
+                - pnpm
+                - nextcache-web
+
+              script:
+                #CONFIG
+                - printf "$pipes" > pipes.sh
+                - chmod 755 pipes.sh
+                - ./pipes.sh
+  
+###############################################Mobile ME###############################################   
+
+      - parallel:
+
+          - step:
+              runs-on:
+                - self.hosted
+                - prod.me
+                - linux
+              name: CD Preprod Mweb ME
+              image:
+                name: 616035352558.dkr.ecr.ap-south-1.amazonaws.com/aws-alpine:latest
+                aws:
+                  access-key: $AWS_ACCESS_KEY_ID
+                  secret-key: $AWS_SECRET_ACCESS_KEY
+              services:
+                - docker
+              caches:
+                - pnpm
+                - nextcache-web
+              script:
+                - printf "$DeployPreProd_MWeb" > DeployPreProd_MWeb.sh
+                - chmod 755 DeployPreProd_MWeb.sh
+                - ./DeployPreProd_MWeb.sh
+
+###############################################MGP ME###############################################   
+
+                #AKS
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $PROD_AZURE_APP_ID
+                    AZURE_PASSWORD: $PROD_AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-prod-me
+                    AZURE_RESOURCE_GROUP: G3-Prod-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: mgp_mweb_me_task.yaml
+                    DEBUG: "true"
+###############################################SRN ME###############################################              
+                #AKS
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $PROD_AZURE_APP_ID
+                    AZURE_PASSWORD: $PROD_AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-prod-me
+                    AZURE_RESOURCE_GROUP: G3-Prod-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: srn_mweb_me_task.yaml
+                    DEBUG: "true"
+
+ ###############################################TMC ME###############################################   
+
+                #AKS
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $PROD_AZURE_APP_ID
+                    AZURE_PASSWORD: $PROD_AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-prod-me
+                    AZURE_RESOURCE_GROUP: G3-Prod-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: tmc_mweb_me_task.yaml
+                    DEBUG: "true"
+
+###############################################ORH ME###############################################   
+                #ECR
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $PROD_AZURE_APP_ID
+                    AZURE_PASSWORD: $PROD_AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-prod-me
+                    AZURE_RESOURCE_GROUP: G3-Prod-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: orh_mweb_me_task.yaml
+                    DEBUG: "true"
+
+###############################################Desktop ME###############################################
+          - step:
+              runs-on:
+                - self.hosted
+                - prod.me
+                - linux
+              name: CD Preprod Mweb ME
+              image:
+                name: 616035352558.dkr.ecr.ap-south-1.amazonaws.com/aws-alpine:latest
+                aws:
+                  access-key: $AWS_ACCESS_KEY_ID
+                  secret-key: $AWS_SECRET_ACCESS_KEY
+              services:
+                - docker
+              caches:
+                - pnpm
+                - nextcache-web
+              script:
+                - printf "$DeployPreProd_Web" > DeployPreProd_Web.sh
+                - chmod 755 DeployPreProd_Web.sh
+                - ./DeployPreProd_Web.sh
+###############################################MGP ME############################################### 
+ 
+                #AKS
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $PROD_AZURE_APP_ID
+                    AZURE_PASSWORD: $PROD_AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-prod-me
+                    AZURE_RESOURCE_GROUP: G3-Prod-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: mgp_web_me_task.yaml
+                    DEBUG: "true"
+###############################################SRN ME############################################### 
+
+                #AKS
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $PROD_AZURE_APP_ID
+                    AZURE_PASSWORD: $PROD_AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-prod-me
+                    AZURE_RESOURCE_GROUP: G3-Prod-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: srn_web_me_task.yaml
+                    DEBUG: "true"
+
+###############################################TMC ME############################################### 
+
+                #AKS
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $PROD_AZURE_APP_ID
+                    AZURE_PASSWORD: $PROD_AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-prod-me
+                    AZURE_RESOURCE_GROUP: G3-Prod-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: tmc_web_me_task.yaml
+                    DEBUG: "true" 
+
+###############################################ORH ME############################################### 
+ 
+                #AKS
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $PROD_AZURE_APP_ID
+                    AZURE_PASSWORD: $PROD_AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-prod-me
+                    AZURE_RESOURCE_GROUP: G3-Prod-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: orh_web_me_task.yaml
+                    DEBUG: "true"
+                
+############################################################### prod ###########################
+
+
+
+    master:
+      - step:
+          name: Deploy prod in India
+          script:
+            - echo "Deploy On Prod"
+      - step:
+          name: Deploy prod in India
+          trigger: manual
+          script:
+            - echo "Deploy prod in India"
+      - parallel:
+          - step:
+              name: Deploy to M-Web prod 
+              deployment: MWebProdIN
+              image:
+                name: 616035352558.dkr.ecr.ap-south-1.amazonaws.com/aws-alpine:latest
+                aws:
+                  access-key: $AWS_ACCESS_KEY_ID
+                  secret-key: $AWS_SECRET_ACCESS_KEY
+              services:
+                - docker
+
+              caches:
+                - pnpm
+                - nextcache-m-web
+
+              script:
+                #CONFIG
+                - printf "$pipes" > pipes.sh
+                - chmod 755 pipes.sh
+                - ./pipes.sh  
+
+###############################################MGP IN###############################################
+                #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_MGP_SERVICE_NAME)
+                    TASK_DEFINITION: "mgp_mweb_in_task.json"
+
+###############################################LIT IN###############################################
+                #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_LIT_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "lit_mweb_in_task.json"
+
+###############################################BLU IN###############################################
+                #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_BLU_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "blu_mweb_in_task.json"
+
+
+
+###############################################POPXO IN###############################################
+                #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_POPXO_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "popxo_mweb_in_task.json"
+###############################################BBC IN###############################################
+          
+                #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_BABYCHAKRA_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "bbc_mweb_in_task.json"
+###############################################STB IN###############################################
+                #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_STBOTANICA_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "stb_mweb_in_task.json"
+
+###############################################ORH IN###############################################
+                #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_ORGANICHARVEST_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "orh_mweb_in_task.json"
+###############################################SRN IN###############################################
+
+                #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_THESIRONA_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "srn_mweb_in_task.json"
+
+###############################################TMC IN###############################################
+                #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_THEMOMSCO_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "tmc_mweb_in_task.json"
+###############################################TWK IN ###############################################
+
+              #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_TWEAKINDIA_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "twk_mweb_in_task.json"
+
+###############################################ORB IN ###############################################
+
+              #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_ORB_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "orb_mweb_in_task.json"
+
+###############################################MNM IN ###############################################
+
+              #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_MNM_SHOP_SERVICE_NAME)
+                    TASK_DEFINITION: "mnm_mweb_in_task.json"
+
+###############################################Desktop IN###############################################
+          - step:
+              name: Deploy to Web prod
+              deployment: WebProdIN
+              image:
+                name: 616035352558.dkr.ecr.ap-south-1.amazonaws.com/aws-alpine:latest
+                aws:
+                  access-key: $AWS_ACCESS_KEY_ID
+                  secret-key: $AWS_SECRET_ACCESS_KEY
+              services:
+                - docker
+
+              caches:
+                - pnpm
+                - nextcache-web
+
+              script:
+                #CONFIG
+                - printf "$pipes" > pipes.sh
+                - chmod 755 pipes.sh
+                - ./pipes.sh  
+          
+###############################################MGP IN############################################### 
+                #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_MGP_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "mgp_web_in_task.json"
+                    
+###############################################LIT IN############################################### 
+                #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_LIT_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "lit_web_in_task.json"
+                    
+###############################################BLU IN############################################### 
+                #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_BLU_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "blu_web_in_task.json"                                        
+###############################################POPXO IN############################################### 
+
+                #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_POPXO_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "popxo_web_in_task.json"
+###############################################BBC IN############################################### 
+                #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_BBC_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "bbc_web_in_task.json"
+###############################################STB IN############################################### 
+
+                #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_STB_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "stb_web_in_task.json"
+###############################################ORH IN############################################### 
+
+                #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_ORH_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "orh_web_in_task.json"
+###############################################SRN IN############################################### 
+
+                #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_SRN_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "srn_web_in_task.json"
+###############################################TMC IN############################################### 
+               #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_TMC_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "tmc_web_in_task.json"
+###############################################TWK IN############################################### 
+
+              #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_TWK_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "twk_web_in_task.json"
+ 
+###############################################ORB IN############################################### 
+
+              #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_ORB_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "orb_web_in_task.json"
+  
+###############################################MNM IN############################################### 
+
+              #ECR
+                - pipe: atlassian/aws-ecs-deploy:1.1.4
+                  variables:
+                    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                    AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                    CLUSTER_NAME: $CLUSTER_NAME
+                    SERVICE_NAME: $( cat PROD_MNM_DESK_SERVICE_NAME)
+                    TASK_DEFINITION: "mnm_web_in_task.json"
+    
+###############################################Mobile ME###############################################   
+
+      - step:
+          name: Deploy Prod in  Middle East
+          script:
+            - echo "Deploy Prod in  Middle East"
+      - parallel:
+          - step:
+              name: Deploy to M-Web prod
+              deployment: MWebProdME
+              image:
+                name: 616035352558.dkr.ecr.ap-south-1.amazonaws.com/aws-alpine:azure
+                aws:
+                  access-key: $AWS_ACCESS_KEY_ID
+                  secret-key: $AWS_SECRET_ACCESS_KEY
+              services:
+                - docker
+
+              caches:
+                - pnpm
+                - nextcache-m-web
+
+              script:
+                #CONFIG
+                - printf "$pipes" > pipes.sh
+                - chmod 755 pipes.sh
+                - ./pipes.sh   
+###############################################Desktop ME###############################################
+ 
+    
+          - step:
+              name: Deploy to Web Prod
+              deployment: WebProdME
+              image:
+                name: 616035352558.dkr.ecr.ap-south-1.amazonaws.com/aws-alpine:azure
+                aws:
+                  access-key: $AWS_ACCESS_KEY_ID
+                  secret-key: $AWS_SECRET_ACCESS_KEY
+              services:
+                - docker
+
+              caches:
+                - pnpm
+                - nextcache-web
+
+              script:
+                #CONFIG
+                - printf "$pipes" > pipes.sh
+                - chmod 755 pipes.sh
+                - ./pipes.sh                 
+###############################################ME###############################################   
+
+      - parallel:
+
+          - step:
+              runs-on:
+                - self.hosted
+                - prod.me
+                - linux
+              name: CD Prod Mweb ME
+              image:
+                name: 616035352558.dkr.ecr.ap-south-1.amazonaws.com/aws-alpine:latest
+                aws:
+                  access-key: $AWS_ACCESS_KEY_ID
+                  secret-key: $AWS_SECRET_ACCESS_KEY
+              services:
+                - docker
+              caches:
+                - pnpm
+                - nextcache-web
+              script:
+                - printf "$DeployProd_MWeb" > DeployProd_MWeb.sh
+                - chmod 755 DeployProd_MWeb.sh
+                - ./DeployProd_MWeb.sh
+
+###############################################MGP ME###############################################   
+
+                #AKS
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $PROD_AZURE_APP_ID
+                    AZURE_PASSWORD: $PROD_AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-prod-me
+                    AZURE_RESOURCE_GROUP: G3-Prod-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: mgp_mweb_me_task.yaml
+                    DEBUG: "true"
+###############################################SRN ME###############################################              
+                #AKS
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $PROD_AZURE_APP_ID
+                    AZURE_PASSWORD: $PROD_AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-prod-me
+                    AZURE_RESOURCE_GROUP: G3-Prod-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: srn_mweb_me_task.yaml
+                    DEBUG: "true"
+
+ ###############################################TMC ME###############################################   
+
+                #AKS
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $PROD_AZURE_APP_ID
+                    AZURE_PASSWORD: $PROD_AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-prod-me
+                    AZURE_RESOURCE_GROUP: G3-Prod-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: tmc_mweb_me_task.yaml
+                    DEBUG: "true"
+
+###############################################ORH ME###############################################   
+                #ECR
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $PROD_AZURE_APP_ID
+                    AZURE_PASSWORD: $PROD_AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-prod-me
+                    AZURE_RESOURCE_GROUP: G3-Prod-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: orh_mweb_me_task.yaml
+                    DEBUG: "true"
+
+###############################################Desktop ME###############################################
+          - step:
+              runs-on:
+                - self.hosted
+                - prod.me
+                - linux
+              name: CD Prod Mweb ME
+              image:
+                name: 616035352558.dkr.ecr.ap-south-1.amazonaws.com/aws-alpine:latest
+                aws:
+                  access-key: $AWS_ACCESS_KEY_ID
+                  secret-key: $AWS_SECRET_ACCESS_KEY
+              services:
+                - docker
+              caches:
+                - pnpm
+                - nextcache-web
+              script:
+                - printf "$DeployProd_Web" > DeployProd_Web.sh
+                - chmod 755 DeployProd_Web.sh
+                - ./DeployProd_Web.sh
+###############################################MGP ME############################################### 
+ 
+                #AKS
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $PROD_AZURE_APP_ID
+                    AZURE_PASSWORD: $PROD_AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-prod-me
+                    AZURE_RESOURCE_GROUP: G3-Prod-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: mgp_web_me_task.yaml
+                    DEBUG: "true"
+###############################################SRN ME############################################### 
+
+                #AKS
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $PROD_AZURE_APP_ID
+                    AZURE_PASSWORD: $PROD_AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-prod-me
+                    AZURE_RESOURCE_GROUP: G3-Prod-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: srn_web_me_task.yaml
+                    DEBUG: "true"
+
+###############################################TMC ME############################################### 
+
+                #AKS
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $PROD_AZURE_APP_ID
+                    AZURE_PASSWORD: $PROD_AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-prod-me
+                    AZURE_RESOURCE_GROUP: G3-Prod-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: tmc_web_me_task.yaml
+                    DEBUG: "true" 
+
+###############################################ORH ME############################################### 
+ 
+                #AKS
+                - pipe: microsoft/azure-aks-deploy:1.0.2
+                  variables:
+                    AZURE_APP_ID: $PROD_AZURE_APP_ID
+                    AZURE_PASSWORD: $PROD_AZURE_PASSWORD
+                    AZURE_TENANT_ID: $AZURE_TENANT_ID
+                    AZURE_AKS_NAME: g3-prod-me
+                    AZURE_RESOURCE_GROUP: G3-Prod-ME
+                    KUBECTL_COMMAND: apply
+                    KUBERNETES_SPEC_FILE: orh_web_me_task.yaml
+                    DEBUG: "true"

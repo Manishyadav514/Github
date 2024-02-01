@@ -1,0 +1,12 @@
+.shopBtn {
+  animation: rightToLeft 0.2s ease-in-out;
+}
+
+@keyframes rightToLeft {
+  from {
+    clip-path: inset(0 0 0 100%);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}

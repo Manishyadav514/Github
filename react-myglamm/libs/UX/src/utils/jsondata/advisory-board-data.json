@@ -1,0 +1,400 @@
+{
+  "doctors": {
+    "key": "DOCTORS",
+    "title": "Highly Experienced Professionals",
+    "sub_title": "We’re bringing Doctors Specializing in a variety of fields to the discussion table.",
+    "members": [
+      {
+        "id": 1,
+        "name": "Dr. Anupam Sibal",
+        "work": "Paediatric Gastroenterologist & Hepatologist",
+        "sub_text": "With over 20+ years of experience, Dr. Anupam Sibal has not only championed the Patient Safety movement in India but also served as a member of the leadership team of Apollo Hospitals Group along with being acknowledged as an International expert in Pediatric Gastroenterology and Hepatology. He has held the roles of President, Global Association of Physicians of Indian Origin (GAPIO), Group Medical Director, Apollo Hospitals Group - India, and Senior Consultant Pediatric Gastroenterologist and Hepatologist, Indraprastha Apollo Hospitals - Delhi among others. Recognised as a motivational speaker & published author, Dr. Sibal has created a global collaboration to bring together 1.4 million physicians of Indian origin from 49 countries on one platform. ",
+        "page_link": "https://www.babychakra.com/learn/dr-anupam-sibal-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-dr-anupam-sibal.png",
+        "app_link": "http://app.babychakra.com/article/v2-18766",
+        "path": "/learn/dr-anupam-sibal-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 2,
+        "name": "Dr. Bhupendra Prakash Arneja",
+        "work": "Child & Newborn Specialist",
+        "sub_text": "Dr. Bhupendra Prakash Arneja has 30+ years of expertise & experience as a Child and Newborn Specialist. As a highly experienced specialist in his field, he has multiple prestigious recognitions along with being associated with multiple top-state government institutions. To fulfil his vision of providing intensive child healthcare, he runs his own clinic out of Delhi.",
+        "page_link": "https://www.babychakra.com/learn/dr-bhupendra-prakash-arneja-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-dr-bhupendra-prakash.png",
+        "app_link": "http://app.babychakra.com/article/v2-18752",
+        "path": "/learn/dr-bhupendra-prakash-arneja-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 3,
+        "name": "Dr. Cajetan Mario Tillis",
+        "work": "MD - Paediatrics",
+        "sub_text": "Dr. Cajetan Mario Francis Tellis holds an MBBS. M.D. in Pediatrics with over 25 years of experience as a specialist. Known for providing affordable care and a deep understanding of a patient’s issues, Dr. Tellis has the vision to provide quality care to children for a better tomorrow.",
+        "page_link": "https://www.babychakra.com/learn/dr-cajetan-mario-tillis-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-dr-cajetan-tellis.png",
+        "app_link": "http://app.babychakra.com/article/v2-18764",
+        "path": "/learn/dr-cajetan-mario-tillis-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 4,
+        "name": "Dr Duru Shah",
+        "work": "Specialist in Gynaecology, Women's Health & Academics",
+        "sub_text": "Dr. Duru Shah is a Gynecologist and Academic based out of Mumbai with over 47+ years of experience. Among her many notable recognitions, Dr. Shah holds the honour of being the first and only Indian to receive the prestigious “FIGO-Distinguished Merit Award for service towards women’s health”, from FIGO, Rome, Italy- October 2012. Dr Shah’s career spans globally with multiple President, Chair, and Member positions under her belt. She has been recognised on several domestic as well as international platforms for her work in the field of Gynaecology, Women’s Health, and Women Empowerment. She has also created academic programs in the field of Gynaecological Reproductive Endocrinology and Assisted Reproduction.",
+        "page_link": "https://www.babychakra.com/learn/dr-duru-shah-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-dr-duru-shah.png",
+        "app_link": "http://app.babychakra.com/article/v2-18772",
+        "path": "/learn/dr-duru-shah-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 12,
+        "name": "Dr Kailash Chander",
+        "work": "MD - Paediatrics, Professor & HOD - Department of Paediatrics",
+        "sub_text": "Dr. Kailash Chander Aggarwal is an MD in Paediatrics and holds the position of Professor & HOD of the Department of Paediatrics at Santosh College and Hospital with over 30 years of experience. Dr. Aggarwal is credited with several papers and publications in the space of neonatal, infant and child care. He has been reconised and awarded with Post-Doctoral Fellowship in Dialysis Medicine (2015) from IGNOU and State Medal by Govt. of Delhi for running his Pulse Polio Eradication Programme.",
+        "page_link": "https://www.babychakra.com/learn/dr-kailash-chander-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-dr-kailash-chander.png",
+        "app_link": "http://app.babychakra.com/article/v2-18779",
+        "path": "/learn/dr-kailash-chander-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 5,
+        "name": "Dr. Neelam Mohan",
+        "work": "Paediatric Gastroenterologist & Hepatologist",
+        "sub_text": "Dr. Neelam Mohan is a pioneer in Paediatric Liver Transplant and is a celebrated Paediatric Gastroenterologist and Hepatologist in India with 23+ years of experience. With multiple honors, national awards, and speaker titles under her belt, Dr. Mohan is recognized not just domestically but also globally for her work in the field. She has authored 256 publications and also published several global & national guidelines on Paediatric Gastroenterology, Hepatology, and Nutrition.",
+        "page_link": "https://www.babychakra.com/learn/dr-neelam-mohan-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-dr-neelam-mohan.png",
+        "app_link": "http://app.babychakra.com/article/v2-18745",
+        "path": "/learn/dr-neelam-mohan-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 6,
+        "name": "Dr. Poonam Mishra",
+        "work": "Obstetrician & Gynecologist",
+        "sub_text": "Dr. Poonam Mishra is an experienced, skilled, and awarded Obstetrician and Gynecologist with over 22 years of experience. Dr. Poonam has a vast and illustrious career with experience in High-Risk Pregnancy Management, Ultrasonography in Gynecology & Obstetrics (especially in Infertility), Laparoscopy, Hysteroscopy, Assisted Reproductive Techniques, Urogynaecology, and more. She is celebrated and known for her moral support & great compassion towards her patients.",
+        "page_link": "https://www.babychakra.com/learn/dr-poonam-mishra-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-dr-poonam-mishra.png",
+        "app_link": "http://app.babychakra.com/article/v2-18756",
+        "path": "/learn/dr-poonam-mishra-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 7,
+        "name": "Dr. Queen Aditya",
+        "work": "MD - Obstetrics & Gynecology",
+        "sub_text": "Dr. Queen Aditya is an MBBS MD in Obstetrics and Gynecology and has 21 years of experience as a specialist. She is a member of the Indian Medical Association (IMA) and the Federation of Obstetric and Gynecological Societies of India (FOGSI). As a consultant, she is associated with 4 hospitals based in Kolkata with a special interest In High-Risk Obesity, Gynae Endocrinology & Vaginal Surgeries.",
+        "page_link": "https://www.babychakra.com/learn/dr-queen-aditya-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-dr-queen-aditya.png",
+        "app_link": "http://app.babychakra.com/article/v2-18757",
+        "path": "/learn/dr-queen-aditya-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 8,
+        "name": "Dr. Rohan Palshetkar",
+        "work": "Obstetrician, Infertility Specialist and Gynecologist",
+        "sub_text": "Dr. Rohan Palshetkar is an Obstetrician, Infertility Specialist and Gynecologist with over 12 years of experience. He has held multiple memberships and leaderships role including 2nd Joint Secretary of The Association of Maharashtra Obstetrics & Gynaecological  Societies (AMOGS) and Joint Treasurer of Maharashtra Chapter of IAGE (MAGE) 2019-2021. Dr Palshetkar has several recognitions including multiple FOGSI awards. He has also published multiple papers many of which are also awarded nationally.",
+        "page_link": "https://www.babychakra.com/learn/dr-rohan-palshetkar-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-dr-roahn-paleshetkar.png",
+        "app_link": "http://app.babychakra.com/article/v2-18773",
+        "path": "/learn/dr-rohan-palshetkar-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 9,
+        "name": "Dr. Saurabh Dani",
+        "work": "Obstetrics & Gynecology Specialist",
+        "sub_text": "Dr. Saurabh Dani is an Obstetrics and Gynecology Specialist with over 24 years of experience in the field. With a special interest in High-Risk Pregnancy and Newborn Screening, Dr. Dani is committed to the health and wellbeing of the mother and baby during and after the pregnancy stages. He is currently associated with Cloudnine Hospital in Mumbai.",
+        "page_link": "https://www.babychakra.com/learn/dr-saurabh-dani-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-dr-saurabh-dani.png",
+        "app_link": "http://app.babychakra.com/article/v2-18765",
+        "path": "/learn/dr-saurabh-dani-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 11,
+        "name": "Dr. Sandhya Saharan",
+        "work": "MD - Obstetrics & Gynecology",
+        "sub_text": "Dr. Sandhya Saharan is a Gynecologist with 29 years of Clinical and 8 years of Research experience in the field. Her focus areas as a Gynaec are PCOS, Infertility, and high-risk pregnancy. Dr. Saharan practices at Jupiter Hospital, Mamta Hospital, and Currae Gynaec IVF Birthing Hospital. She completed MBBS from King Edward Memorial Hospital and Seth Gordhandas Sunderdas Medical College in 1990. She is also a member of the Maharashtra Medical Council. Her mission is to consistently provide quality healthcare to all her patients.",
+        "page_link": "https://www.babychakra.com/learn/dr-sandhya-saharan-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-dr-sandhya-saharan.png",
+        "app_link": "http://app.babychakra.com/article/v2-18778",
+        "path": "/learn/dr-sandhya-saharan-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 10,
+        "name": "Dr. Vaishali Joshi",
+        "work": "Senior Obstetrician & Gynecologist",
+        "sub_text": "Dr. Vaishali Joshi has 23+ years of experience between Mumbai & London as a Senior Obstetrician & Gynecologist. With the certificate for Specialist Training Program in Obstetrics & Gynecology under her belt, Dr. Joshi has been felicitated & bestowed FRCOG by The Royal College, U.K for her 14 years of contribution in the field, internationally. Moreover, she is on the Specialist Register of The General Medical Council, U.K. along with being a member of the Royal College of Obstetrics & Gynecology, London.",
+        "page_link": "https://www.babychakra.com/learn/dr-vaishali-joshi-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-dr-vaishali-joshi.png",
+        "app_link": "http://app.babychakra.com/article/v2-18755",
+        "path": "/learn/dr-vaishali-joshi-babychakra-advisory-board-2022"
+      }
+    ]
+  },
+
+  "corporate": {
+    "key": "CORPORATE",
+    "title": "Celebrated Leaders in Corporates",
+    "sub_title": "We’re onboarding Corporate Leaders that are parents themselves to help us understand the challenges of parents like them",
+    "members": [
+      {
+        "id": 1,
+        "name": "Kartik Rao",
+        "work": "Chief People Officer - the Good Glamm Group",
+        "sub_text": "Currently working as the Chief People’s Officer for The Good Glamm Group, Kartik Rao has led 10+ M&As and Integrations for the Good Glamm Group, while driving massive 2x-3x hiring numbers with equal focus on culture, talent engagement, and retention. He is working with all the founders to design the organizational structures that maximize impact, and optimize talent cost making Good Glamm Group the largest digital conglomerate leveraging content to commerce. His role includes Business & HR to create purposeful teams that deliver stellar business results on a strong foundation of systems, processes, people, and innovation.",
+        "page_link": "https://www.babychakra.com/learn/kartik-rao-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-cr-kartik-rao.png",
+        "app_link": "http://app.babychakra.com/article/v2-18794",
+        "path": "/learn/kartik-rao-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 2,
+        "name": "Ravishankar",
+        "work": "HR Leader & Advisor",
+        "sub_text": "Ravishankar is a recognized leader in Human Resources with over 35 years of experience. Most recently he was the Chief Human Resources officer of HCL TC which he joined after spending a couple of years at Mindtree as their Chief People Officer. Prior to joining Mindtree, Ravi was the Global Head of Talent Management at HCL Technologies and Head HR at Deutsche Software. Currently, he is on the board and acts as an HR advisor for several early and growth-stage companies.  He is also a visiting faculty member & executive coach at ISB.",
+        "page_link": "https://www.babychakra.com/learn/ravishankar-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-cr-ravi-fotos.png",
+        "app_link": "http://app.babychakra.com/article/v2-18796",
+        "path": "/learn/ravishankar-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 3,
+        "name": "Rohit Chennamaneni",
+        "work": "Co-founder - Darwinbox ",
+        "sub_text": "Rohit Chennamaneni is the co-founder of Darwinbox where he is involved with Operations, Investment, Customer Success, and Expansion Strategy.  Passionate about building a world-class product company from India, Rohit started his career as a product analyst at Google and worked with their India & Ireland office. After Google, he worked as an Engagement Manager at McKinsey where he has consulted organizations across the globe (US, Africa, and India) primarily on technology and digitalization. With a versatile experience of around 12 years in blending business strategy & technology, he aspires to create disruptive products, business models, and teams to drive growth and revenue. ",
+        "page_link": "https://www.babychakra.com/learn/rohit-chennamaneni-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-cr-rohit-chennamani.png",
+        "app_link": "http://app.babychakra.com/article/v2-18795",
+        "path": "/learn/rohit-chennamaneni-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 4,
+        "name": "Sejal Haribhakti Mody",
+        "work": "Management Consultant - Accenture and McKinsey",
+        "sub_text": "With over 17 years of experience, Sejal Haribhakti Mody has led global client projects in organization transformation and design, change management, and talent management across industries. With a keen understanding of evolving workforce models including distributed consulting and hybrid ways of working Sejal has led the thinking in this space in MNCs. She is an experienced industry HR Leader who has led: 1) People Integration, Talent and Reward COEs for India’s largest media organization (Disney/Star) 2) Strategy for Global Capability Development (Accenture) and Employee Experience (Unilever). She has also been part of the HR business partner leadership team of one of the largest Consumer Goods (HUL) and Technology consulting companies (Accenture Technology) in the world.",
+        "page_link": "https://www.babychakra.com/learn/sejal-haribhakti-mody-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-cr-sejal-haribhakti.png",
+        "app_link": "http://app.babychakra.com/article/v2-18793",
+        "path": "/learn/sejal-haribhakti-mody-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 5,
+        "name": "Smriti Krishna Singh",
+        "work": "Founder – Kristalball Smart Solutions",
+        "sub_text": "With over 2 decades of successful CXO leadership experience in Fortune 500’s & Startups across the globe, Smriti Krishna Singh has experience in building for scale across multiple industries. She has worked for Flipkart  (Walmart), Sony Pictures Networks, NBC Universal (A.Pac), GE Healthcare,  Genpact North America & Xerox India with expertise in a ‘people-first’ approach. She is a champion of company-wide business innovation and has created benchmark people practices. Smriti has also improved women’s participation in the workforce while driving social impact at scale for the causes of empowerment, education, and the environment. Recognized and awarded by multiple platforms, she has authored & contributed various pieces on thought leadership.",
+        "page_link": "https://www.babychakra.com/learn/smriti-krishna-singh-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-cr-smriti.png",
+        "app_link": "http://app.babychakra.com/article/v2-18797",
+        "path": "/learn/smriti-krishna-singh-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 6,
+        "name": "Dr Anand Narasimha",
+        "work": "Professor of Brand Marketing & Brand Consultant",
+        "sub_text": "Dr Anand is a corporate turned academician, with over 30 years of leadership experience spanning Brand Marketing, Advertising, Consulting & Academics. He has worked for P&G, Nestle, Dabur, ITC, Britannia, BPL, Sony, Samsung, Hyundai & HSBC. Rated among the ‘Top 25 Brand Marketing Professionals in Asia-Pacific’ in 2005, he is a member of ‘The American Marketing Association’ (AMA) & has won many awards including 2 Cannes & 3 EFFIES. He also set up India’s first Shopper Marketing Consultancy with Madison Media World. An alumnus of BITS-Pilani & IIM-Calcutta, he teaches at leading B-Schools like IIM-Bangalore, IIM-Indore & JAGSoM.",
+        "page_link": "https://www.babychakra.com/learn/dr-anand-narasimha-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-Anand-Narasimha-1.png",
+        "app_link": "http://app.babychakra.com/article/v2-43938",
+        "path": "/learn/dr-anand-narasimha-babychakra-advisory-board-2022"
+      }
+    ]
+  },
+  "early_childhood": {
+    "key": "EARLY CHILDHOOD EDUCATORS",
+    "title": "Award-Winning Educators",
+    "sub_title": "We’re onboarding Early Childhood Educators who have been widely recognized & awarded for their work",
+    "members": [
+      {
+        "id": 1,
+        "name": "Fatema Agarkar",
+        "work": "Award-winning Educator",
+        "sub_text": "With close to 2 decades of experience in education, Fatema Agarkar is an award-winning educator who has held multiple important positions including defacto Principal, Trustee, Managing Director among others. She is an avid blogger, recognized as a parenting expert, and has authored many books on educator resources & parenting. She is a consultant to multiple schools - both national & international (set up close to 40 pan India) and is on the advisory board of several organizations. Fatema is the recipient of several honors including the Indian Achiever’s Award 2021. As Vice President of the Early Childhood Association (ECA), she is also the Mumbai Territory Head for Association of Primary Education & Research (APER).",
+        "page_link": "https://www.babychakra.com/learn/fatema-agarkar-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-Ee-fatema-agarkar.png",
+        "app_link": "http://app.babychakra.com/article/v2-18784",
+        "path": "/learn/fatema-agarkar-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 2,
+        "name": "Lina Ashar",
+        "work": "Author, Founder - Kangaroo Kids & Billabong High International Schools, Co-founder - Korroboree – Online School",
+        "sub_text": "Lina Ashar is an Author and Founder of Kangaroo Kids and Billabong High International Schools. She has successfully operated 200+ preschools & international schools and has authored 2 books that focus on parenting and teenage development. She has connected with over 100 + thought leaders across the world to discuss the future of education. She has been recognized and awarded by many notable platforms including A.P.J Abdul Kalam Award for ‘Excellence in Education at the 46th National Summit on Start-Ups and Women Entrepreneurship. Lina has been invited for multiple TEDx Talks and has also been the Key Speaker as well as a Panelist for forums like The Economic Times & Indian Career Education and Development Council.",
+        "page_link": "https://www.babychakra.com/learn/lina-ashar-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-Ee-lina-ashar.png",
+        "app_link": "http://app.babychakra.com/article/v2-18785",
+        "path": "/learn/lina-ashar-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 3,
+        "name": "Dr. Swati Popat Vats",
+        "work": "Global Early Childhood Expert",
+        "sub_text": "Dr. Swati Popat Vats is a global early childhood expert with over 35 years of experience. Dr. Vats is President of the Early Childhood Association and Association for Primary Education and Research (India)  and Poddar Education Network. She designs developmentally appropriate curriculums and her curriculums are used by schools in India and UAE.  She is the educational consultant and series editor for the Cambridge Early Years program. She also serves as an advisor with Cambridge International and Assessment. An advocate for the prevention of child sexual abuse, Dr. Vats has authored and co-authored more than 30 books on various topics for children, parents, and teachers.",
+        "page_link": "https://www.babychakra.com/learn/dr-swati-popat-vats-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-Ee-swait-popat.png",
+        "app_link": "http://app.babychakra.com/article/v2-18786",
+        "path": "/learn/dr-swati-popat-vats-babychakra-advisory-board-2022"
+      }
+    ]
+  },
+
+  "mom_influencers": {
+    "key": "MOM INFLUENCERS",
+    "title": "Moms With The Power To Influence",
+    "sub_title": "Widely loved and celebrated mom influencers are bringing their experience and learnings on board.",
+    "members": [
+      {
+        "id": 1,
+        "name": "Ayesha Ladak",
+        "work": "Mom Influencer",
+        "sub_text": "Ayesha Ladak is a Mumbai-based Mom Influencer. Ranked as TOP 100 Indian Mom Influencers, she has collaborated with several brands & small businesses. With 8 years of experience in social media marketing, she inspires new Influencers/Moms to take control; of their lives. Her mission is to build a business that supports and empowers women to become financially independent.",
+        "page_link": "https://www.babychakra.com/learn/ayesha-ladak-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-In-ayesha-ladak.png",
+        "app_link": "http://app.babychakra.com/article/v2-18829",
+        "path": "/learn/ayesha-ladak-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 2,
+        "name": "Charu Sareen",
+        "work": "Blogger, Former Language Trainer",
+        "sub_text": "Charu Sareen Gujjal is a former teacher and language trainer who has now ventured into blogging. She is also a published author and a mom to five-year-old twins. She actively blogs about her parenting journey on her blog -The Mom Sagas. She discusses & shares useful parenting tips, age-appropriate activities, books/games recommendations for kids, easy DIYs along with her views on womanhood, health, education, and lifestyle.",
+        "page_link": "https://www.babychakra.com/learn/charu-sareen-gujjal-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-In-charu-sareen.png",
+        "app_link": "http://app.babychakra.com/article/v2-18824",
+        "path": "/learn/charu-sareen-gujjal-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 3,
+        "name": "Farah Shaikh",
+        "work": "Digital Marketing Manager & Mom-Blogger",
+        "sub_text": "Farah Shaikh is a digital marketing manager who creates content around lifestyle, motherhood, beauty, and health. She has done her MBA in marketing and has worked with 2 MNCs for 8 years. Now, she is a mom to a 3-year-old baby girl and has a blog where she shares interactive snippets from her life.",
+        "page_link": "https://www.babychakra.com/learn/farah-shaikh-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-In-farah-shaikh.png",
+        "app_link": "http://app.babychakra.com/article/v2-18810",
+        "path": "/learn/farah-shaikh-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 4,
+        "name": "Genevieve",
+        "work": "Entrepreneur",
+        "sub_text": "Genevieve is an entrepreneur & a mom to 2 beautiful girls. Juggling between her business meetings, online school, and managing life with 2 kids, she loves DIYing, watching movies, traveling, garden hopping, and exploring new adventures. A perfect example of jack of all trade trying to be a master of all",
+        "page_link": "https://www.babychakra.com/learn/genevieve-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-In-genevieve.png",
+        "app_link": "http://app.babychakra.com/article/v2-18834",
+        "path": "/learn/genevieve-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 5,
+        "name": "Shifa Merchant",
+        "work": "Content Creator, Blogger",
+        "sub_text": "Shifa Merchant is a content creator and blogger with experience of 7 years in the field. She shares her experiences with her audience in the field of parenting, lifestyle, travel, beauty, and fashion. She is an ex-Bollywood Film Marketeer turned full-time content creator. She has also been selected for various international associations including New York Fashion Week, Warner Brothers Hollywood Tour Collaboration, Singapore Airlines, Formula 1 Racing Grand Prix 2019, James Nomad Hotel New York, Indonesia Tourism, American Tourister (American Team), Amazon & more.",
+        "page_link": "https://www.babychakra.com/learn/shifa-merchant-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-In-shifa.png",
+        "app_link": "http://app.babychakra.com/article/v2-18827",
+        "path": "/learn/shifa-merchant-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 6,
+        "name": "Shweta Tanwar Mukherjee",
+        "work": "Founder - Sociall Knot, Content Creator",
+        "sub_text": "Shweta Tanwar Mukherjee is an Influencer and MBA in Marketing & Advertising. With 10+ years of work experience in Marketing & Brand Development, Shweta ventured into the fields of Wellness, Beauty, Fashion, & Photography. In recent years, she has additionally been working in the space of Mother & Child as well as Lifestyle. She has worked with 300+ Brands to create visual content and worked on experience sharing over social media. ",
+        "page_link": "https://www.babychakra.com/learn/shweta-tanwar-mukherjee-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-In-shweta-mukharjee.png",
+        "app_link": "http://app.babychakra.com/article/v2-18831",
+        "path": "/learn/shweta-tanwar-mukherjee-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 7,
+        "name": "Snehalata Jain",
+        "work": "Microbiologist & Travel Mom Blogger",
+        "sub_text": "Snehalata Jain is a microbiologist by education and a travel-mom-blogger by passion. She is a mom of two adorable kids and has been blogging since 2013. She has recently been recognized by Exchange4 Media in the category of Parenting and also won best parenting award from Exchange4 media.",
+        "page_link": "https://www.babychakra.com/learn/snehalata-jain-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-In-sneha-jain.png",
+        "app_link": "http://app.babychakra.com/article/v2-18809",
+        "path": "/learn/snehalata-jain-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 8,
+        "name": "Varsha Balani",
+        "work": "Lifestyle Influencer",
+        "sub_text": "Varsha Balani is a mom and Lifestyle Influencer. She started her digital journey 2 years ago in the field of parenting and lifestyle. She is a master of multitasking and loves creating content around motherhood - its challenges and upsides. She consistently creates content around positive parenting and having a healthier lifestyle.",
+        "page_link": "https://www.babychakra.com/learn/varsha-balani-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-In-varsha-balani.png",
+        "app_link": "http://app.babychakra.com/article/v2-18833",
+        "path": "/learn/varsha-balani-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 9,
+        "name": "Zahra Jani",
+        "work": "Social Media Creator",
+        "sub_text": "Zahra Jani is the creator of Being Mom & Beyond which is a space that focuses on motherhood, modern parenting, and her passion for fitness and fashion. She has singlehandedly grown her audience organically on Instagram. Her goal with Being Mom and Beyond is to present brands authentically by showing ads and sponsored content are strategically placed for maximum engagement.",
+        "page_link": "https://www.babychakra.com/learn/zahra-jani-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-In-juz.png",
+        "app_link": "http://app.babychakra.com/article/v2-18812",
+        "path": "/learn/zahra-jani-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 10,
+        "name": "Harpreet Suri",
+        "work": "Mom Influencer @Momwearsprada Entrepreneur, Brand Consultant, Activist, Parenting, Lifestyle, Beauty & Travel",
+        "sub_text": "Harpreet Suri aka Mom Wears Prada is one of India’s most influential moms on social media. With a following of 119K and growing, Harpreet is the Most Searched Indian Mom Blogger of Instagram as recognised by Google and is also a mentor to Femina Mrs India contestants. Her journey into stardom began when she gave up her successful career of 16 years as a PR Professional and started her blog; Mom Wears Prada. Harpreet through her parenting journey has shattered many stereotypes about Parenting and has time and again proven how motherhood is just a part of your life and is not your whole life.",
+        "page_link": "https://www.babychakra.com/learn/harpreeth-suri-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/parent-thumb-harpreeth-suri.png",
+        "app_link": "http://app.babychakra.com/article/v2-21682",
+        "path": "/learn/harpreeth-suri-babychakra-advisory-board-2022"
+      }
+    ]
+  },
+
+  "parent_influencers": {
+    "key": "PARENT",
+    "title": "Parents with Social Influence",
+    "sub_title": "We’re bringing together the knowledge & learning of Parents that are involved in larger parent communities",
+    "members": [
+      {
+        "id": 4,
+        "name": "Brinda Rana",
+        "work": "Entrepreneur",
+        "sub_text": "Brinda Rana is an Entrepreneur with a Bachelor's in Pharmacy and a Master's in Pharmaceutical Administration. She has 14 years of experience working with a leading pharmaceutical chain in the US. As an Entrepreneur and Founder of Momz of India, Brinda has built a strong digital community of over 50k+ moms who provide peer-to-peer support. Apart from empowering moms of all backgrounds, Momz of India also supports women-owned small businesses through their online community - Women of India.",
+        "page_link": "https://www.babychakra.com/learn/brinda-rana-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-parenting-brinda-rana.png",
+        "app_link": "http://app.babychakra.com/article/v2-18851",
+        "path": "/learn/brinda-rana-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 3,
+        "name": "Deepshikha Deskhmukh",
+        "work": "Producer, Entrepreneur",
+        "sub_text": "Deepshikha Deshmukh is a Producer, Entrepreneur, and a Mom of 2. Having produced multiple films under the production house Pooja Entertainment, Deepshikha believes in telling stories differently. She is the daughter of film producer Vashu Bhagnani and Puja Bhagnani, and sister of the actor-producer Jackky Bhagnani. Deepshikha is also the founder of the organic skincare brand - Love Organically. She is married to Dhiraj Vilasrao Deshmukh, MLA from Latur Rural constituency, Maharashtra.",
+        "page_link": "https://www.babychakra.com/learn/deepshikha-deskhmukh-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-In-deepshikha-deshmukh.png",
+        "app_link": "http://app.babychakra.com/article/v2-18852",
+        "path": "/learn/deepshikha-deskhmukh-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 2,
+        "name": "Jyoti Agarwal",
+        "work": "Brand Consultant, Social Activist, Motivational Speaker",
+        "sub_text": "Jyoti Agarwal is a Brand Consultant, Social Activist, and Motivational Speaker. Mother to a young child, she founded the Maa2Mom community to connect, communicate, and celebrate everything about being a mother. As a business and marketing consultant, Jyoti loves to encourage and mentor mothers on becoming independent and earning a livelihood with their unique skills. She is also vocal about the mental health challenges that moms face and has advocated the need to take medication, talk about it with their family, and deal with it positively. Through Maa2Mom, Jyoti has impacted 1 million+ lives. The community has over 10 million impressions, 3 Global & 12 major Social campaigns around Mental Health, Breast Cancer, Domestic Violence, Save the Environment.",
+        "page_link": "https://www.babychakra.com/learn/jyoti-agarwal-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-parenting-joyti-agarwal.png",
+        "app_link": "http://app.babychakra.com/article/v2-18850",
+        "path": "/learn/jyoti-agarwal-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 1,
+        "name": "Neha Kare Kanabar",
+        "work": "Manifestation Coach, Founder - Unimo Universe of Moms",
+        "sub_text": "Neha is the founder of UNIMO (Universe of Moms) - the world's largest community of moms with half a million digitally connected moms on Facebook & WhatsApp. She is a renowned mom influencer whose story has been covered by multiple media platforms and is one of the most trusted voices in the space of Parenting and community builders. She is an Fb Blueprint Certified Community Manager and Digital Marketing Associate. Neha is a VP at the Early Childhood Association and has 16 years of corporate experience as a Digital Marketing & Sales Trainer & an EQ2.0 certified professional. She has been recognised and awarded by various platforms including ET Young Newsmakers India 40 under 45.",
+        "page_link": "https://www.babychakra.com/learn/neha-kare-kanabar-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/thumb-parenting-neha-kare.png",
+        "app_link": "http://app.babychakra.com/article/v2-18849",
+        "path": "/learn/neha-kare-kanabar-babychakra-advisory-board-2022"
+      },
+      {
+        "id": 5,
+        "name": "Varun Duggirala",
+        "work": "Author, Entrepreneur",
+        "sub_text": "Varun Duggirala is one of the leading conversationalists in the business, personal development and creator landscape. He co-founded 'The Glitch' in 2009 and has since helped grow it to be one of the leading creative agencies in the country (Global AD Giant WPP acquired it in 2018). He hosts one of India's most popular business podcasts, 'Advertising is dead', and Co-hosts one of its most irreverent business podcasts, 'Think Fast'. He shares everything he's learning across work, life, and everything in between on his audio blog 'The Varun duggi show' & writes a weekly newsletter 'Unschooled'. His first book “Everything is out of syllabus” is coming out February 2022 and has already hit No#1 on the creativity & entrepreneurship best-seller charts . ",
+        "page_link": "https://www.babychakra.com/learn/varun-duggirala-babychakra-advisory-board-2022",
+        "image_url": "https://files.babychakra.com/site-images/original/parent-thumb-varun-duggirala.png",
+        "app_link": "http://app.babychakra.com/article/v2-21681",
+        "path": "/learn/varun-duggirala-babychakra-advisory-board-2022"
+      }
+    ]
+  }
+}

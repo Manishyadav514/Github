@@ -1,0 +1,41 @@
+{
+  "name": "St.Botanica",
+  "short_name": "St.Botanica",
+  "description": "India's Favorite Range of Scientifically & Natural Premium Cosmetics for Hair, Skin and Body, Derma Tested, Safe & Made As Natural as Possible. Made in India, Innovative Formulations with Research Backed Clinically Proven Actives.",
+  "theme_color": "#222e62",
+  "background_color": "#c4d5e5",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "dir": "ltr",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/stb/manifest_icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/stb/manifest_icons/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/stb/manifest_icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/stb/manifest_icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/stb/manifest_icons/stb_maskable_icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
