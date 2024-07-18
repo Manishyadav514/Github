@@ -1,0 +1,25 @@
+.button_off{
+    border-radius: 1.5rem;
+    font-size: 20px;
+    padding-top: 0.5rem ;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    background-color: #ffffff;
+    border-width: 1px;
+    cursor: pointer;
+}
+
+.button_on{
+    border-radius: 1.5rem;
+    font-size: 20px;
+    padding-top: 0.5rem ;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    background-color:black;
+    color: white;
+    border-width: 1px;
+    cursor: pointer;
+
+}

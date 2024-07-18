@@ -1,0 +1,73 @@
+.container{
+    border-radius: 1.5rem;
+    background-color: rgb(44, 42, 42);
+    padding: 24px;
+}
+
+.powerctext{
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.powercsmalltext{
+    font-size: 17px;
+    color: #B7B7B7;
+    margin-bottom: 1rem;
+}
+
+.consumption{
+    display: flex;
+    column-gap: 0.5rem;
+}
+
+.consumptionone,.consumptiontwo{
+    padding: 0.6rem 0.5rem;
+    border: 1px solid rgb(101, 99, 99);
+    border-radius: 0.75rem;
+    width: 3.5rem;
+    height: 5rem;
+    z-index: 1;
+}
+
+.ltngicon{  
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 7px;
+        border-radius: 9999px;
+        background-color: #404243;
+        width: 1.5rem;
+        color: white;
+}
+
+.consumptiontext{
+    font-size: 0.650rem;
+    font-weight: 500;
+    margin: 5px 0px;
+}
+
+.consumptionsmalltext{
+    font-size: 0.5rem;
+    color: #B7B7B7;
+    margin-bottom: 1rem;
+}
+
+.belowicons{  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    border-radius: 9999px;
+    background-color: #404243;
+    width: 1.5rem;
+    
+}
+
+.biconssmalltext{
+    font-size: 0.5rem;
+    color: #B7B7B7;
+    
+}
+
+

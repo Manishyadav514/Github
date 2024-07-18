@@ -1,0 +1,92 @@
+.App{
+  height: 100vh;
+  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr 4fr 12fr;
+  gap: 16px;
+  padding: 32px;
+}
+
+.sidebar{
+  background-color: #1c1e1f;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+  row-gap: 1.5rem;
+}
+
+.widgets{
+  background-color: #1c1e1f;
+  border-radius: 24px;
+  
+  color: white;
+  display: grid;
+  grid-template-rows: 2fr;
+  row-gap: 1rem;
+}
+
+.home{
+  background-color: white;
+  border-radius: 24px;
+  padding: 32px;
+  overflow-y:scroll ;
+}
+
+.devices-section{
+  margin-top: 16px;
+}
+
+.devices-container{
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.menubar{
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.settings{
+  /* display: flex; */
+  background-color: white;
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.statistics{
+  background-color: white;
+  border-radius: 20px;
+  padding: 32px;
+  overflow-y: scroll;
+}
+
+.security{
+  background-color: white;
+  border-radius: 20px;
+  padding: 32px;
+  overflow-y: scroll;
+}
+
+.ubutton{
+  width: 10rem;
+  align-items: center;
+  padding: 10px;
+}
+
+.ubuttonf{
+  font-size: 20px;
+  padding: 10px;
+  row-gap: 0.25rem;
+}
+
+.ubuttonimg{
+ height: 1.3rem;
+ width: 1.3rem;
+}
+
